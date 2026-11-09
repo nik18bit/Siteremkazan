@@ -1,3 +1,662 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ремонт компьютеров в Казани с выездом 24/7 | RUSLANKE.RU</title>
+    <meta name="description" content="Ремонт компьютеров и ноутбуков в Казани с бесплатным выездом мастера 24/7. Создание сайтов под ключ, IT-поддержка бизнеса. Гарантия до 12 месяцев.">
+    <meta name="keywords" content="ремонт компьютеров Казань, выезд мастера, ремонт ноутбуков, создание сайтов Казань, IT-поддержка">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1e6bd6">
+
+    <!-- ВАЖНО: замените URL ниже на свой после публикации на GitHub Pages.
+         Пример: https://username.github.io/repo/ или https://ruslanke.ru/ -->
+    <link rel="canonical" href="https://ruslanke.ru/">
+
+    <!-- Favicon (inline SVG, чтобы не было 404) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231e6bd6'/%3E%3Ctext x='50' y='68' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ремонт компьютеров в Казани с выездом 24/7 | RUSLANKE.RU">
+    <meta property="og:description" content="Ремонт компьютеров и ноутбуков в Казани с бесплатным выездом мастера 24/7. Создание сайтов под ключ, IT-поддержка бизнеса.">
+    <meta property="og:url" content="https://ruslanke.ru/">
+    <meta property="og:locale" content="ru_RU">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <style>
+        :root {
+            --primary: #1e6bd6;
+            --primary-dark: #1551a8;
+            --accent: #ffb800;
+            --dark: #1a1f2e;
+            --text: #2c3345;
+            --muted: #6b7280;
+            --bg-light: #f5f7fb;
+            --white: #ffffff;
+            --radius: 14px;
+            --shadow: 0 10px 30px rgba(30, 107, 214, 0.08);
+            --shadow-hover: 0 18px 40px rgba(30, 107, 214, 0.15);
+            --font: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font);
+            color: var(--text);
+            line-height: 1.6;
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: var(--primary); text-decoration: none; transition: color .2s; }
+        a:hover { color: var(--primary-dark); }
+
+        img { max-width: 100%; display: block; }
+
+        .container {
+            width: 100%;
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== Шапка ===== */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid #e8edf5;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            min-height: 68px;
+            padding: 10px 0;
+            position: relative;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: .5px;
+            color: var(--dark);
+        }
+        .logo i { color: var(--primary); font-size: 1.4rem; }
+        .logo:hover { color: var(--dark); }
+
+        #navLinks {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+        }
+
+        #navLinks a {
+            color: var(--text);
+            font-weight: 500;
+            font-size: .95rem;
+            position: relative;
+        }
+        #navLinks a::after {
+            content: "";
+            position: absolute;
+            left: 0; bottom: -6px;
+            width: 0; height: 2px;
+            background: var(--primary);
+            transition: width .25s;
+        }
+        #navLinks a:hover::after { width: 100%; }
+
+        .header-phone {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            color: var(--dark);
+            white-space: nowrap;
+        }
+        .header-phone i { color: var(--primary); }
+
+        .burger {
+            display: none;
+            background: none;
+            border: 0;
+            font-size: 1.4rem;
+            color: var(--dark);
+            cursor: pointer;
+            padding: 6px;
+            line-height: 1;
+        }
+
+        /* ===== Hero ===== */
+        .hero {
+            background: linear-gradient(135deg, #eef4ff 0%, #f8fbff 60%, #fff 100%);
+            padding: 72px 0 64px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(1.7rem, 3.6vw, 2.7rem);
+            line-height: 1.2;
+            color: var(--dark);
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            font-size: 1.08rem;
+            color: var(--muted);
+            margin-bottom: 26px;
+            max-width: 560px;
+        }
+
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+
+        .btn-solid, .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform .15s, box-shadow .2s, background .2s;
+            border: 2px solid transparent;
+        }
+
+        .btn-solid {
+            background: var(--primary);
+            color: #fff;
+            box-shadow: 0 8px 20px rgba(30, 107, 214, 0.25);
+        }
+        .btn-solid:hover { background: var(--primary-dark); color: #fff; transform: translateY(-2px); }
+
+        .btn-outline {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: transparent;
+        }
+        .btn-outline:hover { background: var(--primary); color: #fff; }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            border: 1px solid #e4ebf7;
+            border-radius: 999px;
+            padding: 8px 16px;
+            font-size: .88rem;
+            font-weight: 600;
+            color: var(--text);
+            box-shadow: var(--shadow);
+        }
+        .hero-badge i { color: var(--primary); }
+
+        .hero-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow-hover);
+            border: 1px solid #edf2fa;
+        }
+        .hero-card h3 { color: var(--dark); margin-bottom: 16px; font-size: 1.15rem; }
+        .hero-card ul { list-style: none; display: grid; gap: 12px; }
+        .hero-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: var(--muted);
+            font-size: .95rem;
+        }
+        .hero-card li i { color: #16a34a; margin-top: 4px; }
+
+        /* ===== Секции ===== */
+        section { padding: 72px 0; }
+
+        .section-title {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 44px;
+        }
+        .section-title h2 {
+            font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+            color: var(--dark);
+            margin-bottom: 12px;
+            line-height: 1.25;
+        }
+        .section-title p { color: var(--muted); font-size: 1.05rem; }
+
+        /* ===== Услуги ===== */
+        .services { background: var(--bg-light); }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 26px;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: var(--radius);
+            padding: 30px 26px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #eef2f9;
+            transition: transform .2s, box-shadow .2s;
+        }
+        .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+
+        .service-icon {
+            width: 58px; height: 58px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #e8f0ff, #d8e6ff);
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 18px;
+        }
+
+        .service-card h3 { color: var(--dark); font-size: 1.18rem; margin-bottom: 10px; line-height: 1.35; }
+        .service-card > p { color: var(--muted); font-size: .95rem; margin-bottom: 18px; }
+
+        .service-list {
+            list-style: none;
+            display: grid;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        .service-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            font-size: .92rem;
+            color: var(--text);
+        }
+        .service-list li i { color: #16a34a; margin-top: 4px; font-size: .85rem; }
+
+        .service-note {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff8e6;
+            border: 1px solid #ffe9a8;
+            color: #8a6100;
+            border-radius: 10px;
+            padding: 10px 14px;
+            font-size: .87rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .service-note i { color: var(--accent); }
+
+        .service-card .btn-solid { width: 100%; }
+
+        /* ===== Преимущества ===== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .feature-item {
+            background: #fff;
+            border: 1px solid #eef2f9;
+            border-radius: var(--radius);
+            padding: 28px 22px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        .feature-item i {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 14px;
+            display: inline-block;
+        }
+        .feature-item h4 { color: var(--dark); margin-bottom: 10px; font-size: 1.05rem; }
+        .feature-item p { color: var(--muted); font-size: .9rem; }
+
+        /* ===== SEO-блок ===== */
+        .seo-text { background: var(--bg-light); }
+        .seo-text h2 { color: var(--dark); margin-bottom: 18px; font-size: clamp(1.4rem, 2.4vw, 1.9rem); }
+        .seo-text p { color: var(--text); margin-bottom: 16px; max-width: 900px; }
+        .seo-text a { font-weight: 700; }
+
+        /* ===== FAQ ===== */
+        .faq-list {
+            display: grid;
+            gap: 14px;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: #fff;
+            border: 1px solid #e8edf5;
+            border-radius: 12px;
+            padding: 20px 24px;
+            box-shadow: var(--shadow);
+        }
+        .faq-item h3 {
+            color: var(--dark);
+            font-size: 1.02rem;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        .faq-item p { color: var(--muted); font-size: .95rem; }
+
+        /* ===== Контакты ===== */
+        .contact { background: linear-gradient(180deg, #fff, #f5f7fb); }
+
+        .contact-form {
+            max-width: 760px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 18px;
+            padding: 36px;
+            box-shadow: var(--shadow-hover);
+            border: 1px solid #eef2f9;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .form-group { margin-bottom: 18px; display: flex; flex-direction: column; }
+
+        .form-group label {
+            font-weight: 600;
+            font-size: .92rem;
+            color: var(--dark);
+            margin-bottom: 7px;
+        }
+
+        .optional { color: var(--muted); font-weight: 400; }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea,
+        .messenger-field input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1.5px solid #dbe3ef;
+            border-radius: 10px;
+            font-family: var(--font);
+            font-size: .97rem;
+            color: var(--text);
+            background: #fff;
+            transition: border-color .2s, box-shadow .2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus,
+        .messenger-field input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(30, 107, 214, 0.12);
+        }
+
+        .form-group input.error,
+        .messenger-field input.error { border-color: #dc2626; }
+
+        .form-group textarea { resize: vertical; min-height: 100px; }
+
+        .messengers-block {
+            background: #f8faff;
+            border: 1px solid #e6eefb;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 18px;
+        }
+
+        .block-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: .92rem;
+            color: var(--dark);
+            margin-bottom: 14px;
+        }
+        .block-title i { color: var(--primary); }
+
+        .messenger-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .messenger-label {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: .85rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+        .messenger-label .tg { color: #229ED9; }
+        .messenger-label .wa { color: #25D366; }
+        .messenger-label .max { color: #7c3aed; }
+
+        .form-info-note {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: .85rem;
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+        .form-info-note i { color: #16a34a; }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            border: 0;
+            border-radius: 999px;
+            background: var(--primary);
+            color: #fff;
+            font-size: 1.02rem;
+            font-weight: 700;
+            font-family: var(--font);
+            cursor: pointer;
+            transition: background .2s, transform .15s, opacity .2s;
+        }
+        .submit-btn:hover:not(:disabled) { background: var(--primary-dark); transform: translateY(-1px); }
+        .submit-btn:disabled { opacity: .7; cursor: not-allowed; }
+
+        .form-status {
+            margin-top: 14px;
+            font-size: .9rem;
+            font-weight: 600;
+            min-height: 1.2em;
+        }
+        .form-status.success { color: #16a34a; }
+        .form-status.error { color: #dc2626; }
+
+        /* ===== Футер ===== */
+        footer {
+            background: var(--dark);
+            color: #c7cfdd;
+            padding: 40px 0 28px;
+        }
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 18px;
+            text-align: center;
+        }
+        footer .logo { color: #fff; }
+        footer .logo i { color: var(--accent); }
+
+        .footer-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px 28px;
+            font-size: .92rem;
+        }
+        .footer-info span { display: inline-flex; align-items: center; gap: 7px; }
+        .footer-info i { color: var(--accent); }
+        .footer-info a { color: #fff; }
+        .footer-info a:hover { color: var(--accent); }
+
+        .social-links { display: flex; gap: 14px; }
+        .social-links a {
+            width: 40px; height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            font-size: 1rem;
+            transition: background .2s, transform .15s;
+        }
+        .social-links a:hover { background: var(--primary); color: #fff; transform: translateY(-2px); }
+
+        .copyright { font-size: .82rem; color: #8b96ab; }
+
+        /* ===== Адаптив ===== */
+        @media (max-width: 992px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .hero-card { max-width: 520px; }
+            .services-grid { grid-template-columns: 1fr 1fr; }
+            .features-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .burger { display: inline-flex; }
+            #navLinks {
+                position: absolute;
+                top: 100%; left: 0; right: 0;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+                background: #fff;
+                border-bottom: 1px solid #e8edf5;
+                box-shadow: 0 12px 24px rgba(0,0,0,.08);
+                padding: 8px 20px 16px;
+                display: none;
+            }
+            #navLinks.active { display: flex; }
+            #navLinks a { padding: 12px 0; width: 100%; border-bottom: 1px solid #f0f3f9; }
+            #navLinks a:last-child { border-bottom: 0; }
+            .header-phone { display: none; }
+
+            section { padding: 52px 0; }
+            .hero { padding: 44px 0; }
+            .services-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .messenger-grid { grid-template-columns: 1fr; }
+            .contact-form { padding: 24px 18px; }
+        }
+
+        @media (max-width: 420px) {
+            .hero-actions .btn-solid,
+            .hero-actions .btn-outline { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ШАПКА -->
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo"><i class="fas fa-laptop-code" aria-hidden="true"></i> RUSLANKE.RU</a>
+
+            <button class="burger" id="burgerBtn" type="button"
+                    aria-label="Открыть меню" aria-expanded="false" aria-controls="navLinks">
+                <i class="fas fa-bars" id="burgerIcon" aria-hidden="true"></i>
+            </button>
+
+            <nav id="navLinks" aria-label="Основная навигация">
+                <a href="#services" onclick="closeMenu()">Услуги</a>
+                <a href="#features" onclick="closeMenu()">Преимущества</a>
+                <a href="#faq" onclick="closeMenu()">Вопросы</a>
+                <a href="#contact" onclick="closeMenu()">Контакты</a>
+            </nav>
+
+            <!-- ЗАМЕНИТЕ номер телефона на реальный -->
+            <a href="tel:+79991234567" class="header-phone">
+                <i class="fas fa-phone-alt" aria-hidden="true"></i> +7 (999) 123-45-67
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <h1>Ремонт компьютеров и ноутбуков в Казани — выезд мастера 24/7</h1>
+                <p>Приедем в течение 1–2 часов в любой район города. Диагностика и ремонт на месте или в сервисе. Бесплатный выезд при заказе ремонта.</p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn-solid"><i class="fas fa-bolt" aria-hidden="true"></i> Вызвать мастера</a>
+                    <a href="tel:+79991234567" class="btn-outline"><i class="fas fa-phone-alt" aria-hidden="true"></i> Позвонить</a>
+                </div>
+                <div class="hero-badges">
+                    <span class="hero-badge"><i class="fas fa-clock" aria-hidden="true"></i> Работаем 24/7</span>
+                    <span class="hero-badge"><i class="fas fa-shield-alt" aria-hidden="true"></i> Гарантия до 12 мес.</span>
+                    <span class="hero-badge"><i class="fas fa-car-side" aria-hidden="true"></i> Бесплатный выезд</span>
+                </div>
+            </div>
+            <div class="hero-card">
+                <h3>Что мы делаем</h3>
+                <ul>
+                    <li><i class="fas fa-check" aria-hidden="true"></i> Диагностика и чистка от пыли</li>
+                    <li><i class="fas fa-check" aria-hidden="true"></i> Замена комплектующих и апгрейд</li>
+                    <li><i class="fas fa-check" aria-hidden="true"></i> Установка Windows и программ</li>
+                    <li><i class="fas fa-check" aria-hidden="true"></i> Удаление вирусов и восстановление данных</li>
+                    <li><i class="fas fa-check" aria-hidden="true"></i> Ремонт после залития и перегрева</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- УСЛУГИ -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Наши услуги</h2>
+                <p>Ремонт компьютеров, создание сайтов и IT-поддержка бизнеса в Казани</p>
+            </div>
+            <div class="services-grid">
+
                 <!-- Карточка 1: Ремонт компьютеров -->
                 <article class="service-card">
                     <div class="service-icon"><i class="fas fa-tools" aria-hidden="true"></i></div>
@@ -120,179 +779,4 @@
             <div class="faq-list">
                 <div class="faq-item">
                     <h3>Сколько стоит выезд мастера по ремонту компьютера в Казани?</h3>
-                    <p>Выезд мастера по Казани бесплатный при заказе ремонта. Стоимость работ озвучивается до начала ремонта.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Работаете ли вы круглосуточно?</h3>
-                    <p>Да, мы принимаем заявки 24/7 и выезжаем на ремонт компьютеров в любое время суток по Казани.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Сколько стоит создание сайта в Казани?</h3>
-                    <p>Стоимость создания сайта зависит от сложности: лендинг — от 15 000 ₽, корпоративный сайт — от 30 000 ₽, интернет-магазин — от 50 000 ₽.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Даёте ли вы гарантию на ремонт?</h3>
-                    <p>Да, мы предоставляем гарантию до 12 месяцев на выполненные работы и установленные комплектующие.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Можно ли оплатить услуги безналичным расчётом?</h3>
-                    <p>Да, мы принимаем оплату наличными, картой и по безналичному расчёту для организаций. Предоставляем закрывающие документы.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- КОНТАКТЫ -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Оставьте заявку</h2>
-                <p>Перезвоним в течение 15 минут и ответим на все вопросы</p>
-            </div>
-            <form class="contact-form" id="contactForm" novalidate>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Ваше имя <span class="optional">(необязательно)</span></label>
-                        <input type="text" id="name" name="name" placeholder="Иван" autocomplete="name">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Телефон *</label>
-                        <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="service">Какая услуга нужна?</label>
-                    <select id="service" name="service">
-                        <option value="repair">Ремонт компьютера / ноутбука</option>
-                        <option value="site">Создание сайта</option>
-                        <option value="it-support">IT-поддержка бизнеса</option>
-                        <option value="other">Другое</option>
-                    </select>
-                </div>
-
-                <div class="messengers-block">
-                    <div class="block-title">
-                        <i class="fas fa-comment-dots" aria-hidden="true"></i>
-                        Укажите мессенджер для быстрой связи (необязательно)
-                    </div>
-                    <div class="messenger-grid">
-                        <div class="messenger-field">
-                            <div class="messenger-label"><i class="fab fa-telegram tg" aria-hidden="true"></i> Telegram</div>
-                            <input type="text" name="telegram" placeholder="@username" autocomplete="off">
-                        </div>
-                        <div class="messenger-field">
-                            <div class="messenger-label"><i class="fas fa-comment max" aria-hidden="true"></i> MAX</div>
-                            <input type="text" name="max" placeholder="Номер или ник" autocomplete="off">
-                        </div>
-                        <div class="messenger-field">
-                            <div class="messenger-label"><i class="fab fa-whatsapp wa" aria-hidden="true"></i> WhatsApp</div>
-                            <input type="tel" name="whatsapp" placeholder="+7 (___) ___-__-__" autocomplete="off">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Опишите проблему или задачу <span class="optional">(необязательно)</span></label>
-                    <textarea id="message" name="message" placeholder="Например: ноутбук перегревается и выключается..."></textarea>
-                </div>
-
-                <div class="form-info-note">
-                    <i class="fas fa-lock" aria-hidden="true"></i>
-                    Ваши данные защищены и не передаются третьим лицам
-                </div>
-
-                <button type="submit" class="submit-btn" id="submitBtn">Отправить заявку</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- ФУТЕР -->
-    <footer>
-        <div class="container">
-            <div class="logo">
-                <i class="fas fa-laptop-code" aria-hidden="true"></i> RUSLANKE.RU
-            </div>
-            <div class="footer-info">
-                <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> г. Казань, ул. Баумана, 1</span>
-                <span><i class="fas fa-phone-alt" aria-hidden="true"></i> <a href="tel:+79991234567">+7 (999) 123-45-67</a></span>
-                <span><i class="fas fa-clock" aria-hidden="true"></i> Работаем 24/7 — без выходных</span>
-            </div>
-            <div class="social-links">
-                <a href="#" aria-label="Telegram"><i class="fab fa-telegram" aria-hidden="true"></i></a>
-                <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-                <a href="#" aria-label="ВКонтакте"><i class="fab fa-vk" aria-hidden="true"></i></a>
-            </div>
-            <div class="copyright">
-                © <span id="year"></span> RUSLANKE.RU — Ремонт компьютеров и создание сайтов в Казани. Все права защищены.
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // ===== Бургер-меню =====
-        function toggleMenu() {
-            const nav = document.getElementById('navLinks');
-            const btn = document.getElementById('burgerBtn');
-            const icon = document.getElementById('burgerIcon');
-            const isOpen = nav.classList.toggle('active');
-            btn.setAttribute('aria-expanded', isOpen);
-            btn.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
-            icon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
-        }
-
-        function closeMenu() {
-            const nav = document.getElementById('navLinks');
-            const btn = document.getElementById('burgerBtn');
-            const icon = document.getElementById('burgerIcon');
-            nav.classList.remove('active');
-            btn.setAttribute('aria-expanded', 'false');
-            btn.setAttribute('aria-label', 'Открыть меню');
-            icon.className = 'fas fa-bars';
-        }
-
-        // Закрытие меню по клику вне шапки
-        document.addEventListener('click', function (e) {
-            const nav = document.getElementById('navLinks');
-            const btn = document.getElementById('burgerBtn');
-            if (nav.classList.contains('active') && !nav.contains(e.target) && !btn.contains(e.target)) {
-                closeMenu();
-            }
-        });
-
-        // ===== Текущий год в футере =====
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // ===== Валидация и отправка формы =====
-        const form = document.getElementById('contactForm');
-        const submitBtn = document.getElementById('submitBtn');
-
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const phone = document.getElementById('phone').value.trim();
-            // Простейшая проверка: минимум 10 цифр
-            const digits = phone.replace(/\D/g, '');
-            if (digits.length < 10) {
-                alert('Пожалуйста, укажите корректный номер телефона.');
-                document.getElementById('phone').focus();
-                return;
-            }
-
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Отправка...';
-
-            // Имитация отправки. Замените на реальный fetch() к вашему бэкенду.
-            setTimeout(function () {
-                submitBtn.textContent = 'Заявка отправлена ✓';
-                alert('Спасибо! Ваша заявка принята. Мы свяжемся с вами в течение 15 минут.');
-                form.reset();
-                setTimeout(function () {
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Отправить заявку';
-                }, 3000);
-            }, 800);
-        });
-    </script>
-</body>
-</html>
+                    <p>Выезд мастера по Казани
