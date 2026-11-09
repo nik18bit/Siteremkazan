@@ -264,11 +264,13 @@
     .modal-box {
       background: #fff;
       border-radius: 24px;
-      padding: 40px;
+      padding: 30px;
       max-width: 650px;
       width: 100%;
-      max-height: 90vh; /* Ограничиваем высоту окна */
-      overflow-y: auto; /* Включаем прокрутку внутри окна */
+      /* Жестко ограничиваем высоту окна */
+      max-height: 85vh; 
+      /* Включаем прокрутку, если текст не влезет */
+      overflow-y: auto; 
       box-shadow: 0 10px 40px rgba(0,0,0,.2);
       position: relative;
       transform: translateY(20px);
@@ -278,6 +280,18 @@
     .modal-box h2 { text-align: center; margin-bottom: 20px; color: var(--primary-dark); }
     .modal-box p { color: #3f6360; font-size: 1.05rem; line-height: 1.8; margin-bottom: 0; text-align: justify; }
     
+    /* ОТДЕЛЬНЫЙ КЛАСС ДЛЯ ФОТО */
+    .modal-img {
+      width: 100%;
+      height: auto;
+      max-height: 300px; /* Ограничиваем высоту фото до 300 пикселей */
+      object-fit: cover; /* Обрезаем лишнее, сохраняя пропорции */
+      object-position: center 20%; /* Центрируем faces */
+      border-radius: 12px;
+      margin-bottom: 20px;
+      display: block;
+    }
+
     .modal-close {
       position: absolute;
       top: 15px; right: 15px;
@@ -290,7 +304,7 @@
       color: var(--primary-dark);
       font-size: 1.2rem;
       transition: background 0.2s;
-      z-index: 10; /* Чтобы крестик был поверх фото при прокрутке */
+      z-index: 10;
     }
     .modal-close:hover { background: #cce5e3; }
 
@@ -324,8 +338,9 @@
       .logo { font-size: 1.1rem; gap: 8px; }
       .logo svg { width: 32px; height: 32px; border-radius: 5px; }
       
-      .modal-box { padding: 30px 20px; }
+      .modal-box { padding: 25px 20px; max-height: 90vh; }
       .modal-box p { font-size: 0.95rem; text-align: left; }
+      .modal-img { max-height: 220px; } /* На телефонах фото еще меньше */
       
       .btn { width: 100%; max-width: 300px; } 
     }
@@ -339,8 +354,8 @@
       <button class="modal-close" aria-label="Закрыть окно">&times;</button>
       <h2 id="aboutTitle">О нас</h2>
       
-      <!-- Фото команды с ограничением высоты -->
-      <img src="team.jpg" alt="Команда RUSLANKE.RU" style="width: 100%; max-height: 350px; object-fit: cover; object-position: center 20%; border-radius: 12px; margin-bottom: 20px; display: block;">
+      <!-- Применяем класс modal-img -->
+      <img src="team.jpg" alt="Команда RUSLANKE.RU" class="modal-img">
       
       <p>Наша команда состоит из 10 опытных специалистов, каждый из которых является настоящим профессионалом в своей сфере. Мы специализируемся на ремонте компьютеров и создании сайтов, обеспечивая высочайшее качество услуг. За время работы мы успешно выполнили более 1000 заказов по всему миру, помогая клиентам решать самые разные задачи. Мы гордимся тем, что к нам обращаются как частные лица, так и крупные компании, доверяя нам свою технику и digital-проекты. Наш подход основан на индивидуальном внимании к каждому клиенту и глубоком понимании технических нюансов. Мы постоянно развиваемся и следим за современными технологиями, чтобы предлагать лучшие решения. Выбирая нас, вы получаете надежного партнера, нацеленного на долгосрочное и плодотворное сотрудничество.</p>
     </div>
@@ -489,10 +504,8 @@
   </footer>
 
   <script>
-    // Год в футере
     document.getElementById('year').textContent = new Date().getFullYear();
     
-    // Мобильное меню
     const burger = document.getElementById('burger');
     const navLinks = document.getElementById('navLinks');
     
@@ -501,7 +514,6 @@
       burger.setAttribute('aria-expanded', isOpen);
     });
 
-    // Плавная прокрутка (Услуги, Контакты, Связаться)
     const scrollLinks = document.querySelectorAll('.scroll-link');
     scrollLinks.forEach(link => {
       link.addEventListener('click', function(e) {
@@ -511,11 +523,9 @@
         const targetElement = document.querySelector(targetId);
         
         if (targetElement) {
-          // Закрываем мобильное меню
           navLinks.classList.remove('open');
           burger.setAttribute('aria-expanded', 'false');
           
-          // Высчитываем отступ с учетом фиксированной шапки
           const headerHeight = document.querySelector('header').offsetHeight;
           const elementPosition = targetElement.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 10; 
@@ -528,7 +538,6 @@
       });
     });
 
-    // Модальное окно "О нас"
     const aboutModal = document.getElementById('aboutModal');
     const openAboutBtn = document.getElementById('openAboutBtn');
     const closeAboutBtn = document.querySelector('.modal-close');
