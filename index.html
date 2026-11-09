@@ -10,8 +10,13 @@
     <meta name="keywords" content="ремонт компьютеров Казань, ремонт компьютеров с выездом Казань, ремонт ноутбуков Казань, вызов компьютерного мастера Казань, создание сайтов Казань, разработка сайтов Казань, заказать сайт Казань, веб-студия Казань, ремонт ПК Казань 24/7">
     <meta name="author" content="TechMaster Казань">
     <meta name="robots" content="index, follow">
-    <!-- ЗАМЕНИТЕ на свой домен -->
-    <link rel="canonical" href="https://ВАШ-ДОМЕН.ru/">
+
+    <link rel="canonical" href="https://ruslanke.ru/">
+
+    <!-- Favicon (файлы должны лежать в корне сайта) -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     <!-- Гео -->
     <meta name="geo.region" content="RU-TA">
@@ -25,12 +30,16 @@
     <meta property="og:site_name" content="TechMaster Казань">
     <meta property="og:title" content="Ремонт компьютеров в Казани с выездом 24/7 | Создание сайтов">
     <meta property="og:description" content="Ремонт компьютеров и ноутбуков с выездом по Казани круглосуточно. Создание сайтов под ключ. Выезд мастера 24/7, гарантия.">
-    <meta property="og:url" content="https://ВАШ-ДОМЕН.ru/">
-    <meta property="og:image" content="https://ВАШ-ДОМЕН.ru/og-image.jpg">
+    <meta property="og:url" content="https://ruslanke.ru/">
+    <meta property="og:image" content="https://ruslanke.ru/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="TechMaster Казань — ремонт компьютеров и создание сайтов">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Ремонт компьютеров в Казани с выездом 24/7">
     <meta name="twitter:description" content="Ремонт ПК и ноутбуков с выездом по Казани. Создание сайтов под ключ. Работаем круглосуточно.">
+    <meta name="twitter:image" content="https://ruslanke.ru/og-image.jpg">
 
     <!-- Schema.org LocalBusiness -->
     <script type="application/ld+json">
@@ -38,9 +47,9 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "TechMaster Казань",
-      "image": "https://ВАШ-ДОМЕН.ru/logo.jpg",
-      "@id": "https://ВАШ-ДОМЕН.ru/",
-      "url": "https://ВАШ-ДОМЕН.ru/",
+      "image": "https://ruslanke.ru/logo.jpg",
+      "@id": "https://ruslanke.ru/",
+      "url": "https://ruslanke.ru/",
       "telephone": "+79991234567",
       "priceRange": "₽₽",
       "description": "Ремонт компьютеров и ноутбуков с выездом по Казани круглосуточно. Создание сайтов под ключ.",
@@ -52,19 +61,41 @@
         "postalCode": "420111",
         "addressCountry": "RU"
       },
-      "geo": { "@type": "GeoCoordinates", "latitude": 55.796127, "longitude": 49.106414 },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 55.796127,
+        "longitude": 49.106414
+      },
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-        "opens": "00:00", "closes": "23:59"
+        "opens": "00:00",
+        "closes": "23:59"
       },
-      "areaServed": { "@type": "City", "name": "Казань" },
+      "areaServed": {
+        "@type": "City",
+        "name": "Казань"
+      },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Услуги",
         "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт компьютеров с выездом в Казани", "description": "Ремонт ПК и ноутбуков с выездом мастера по Казани, круглосуточно 24/7" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Создание сайтов в Казани", "description": "Разработка сайтов под ключ: лендинги, интернет-магазины, корпоративные сайты" } }
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Ремонт компьютеров с выездом в Казани",
+              "description": "Ремонт ПК и ноутбуков с выездом мастера по Казани, круглосуточно 24/7"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Создание сайтов в Казани",
+              "description": "Разработка сайтов под ключ: лендинги, интернет-магазины, корпоративные сайты"
+            }
+          }
         ]
       }
     }
@@ -76,9 +107,30 @@
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "Сколько стоит выезд мастера по ремонту компьютера в Казани?", "acceptedAnswer": { "@type": "Answer", "text": "Выезд мастера по Казани бесплатный при заказе ремонта. Стоимость работ озвучивается до начала ремонта." } },
-        { "@type": "Question", "name": "Работаете ли вы круглосуточно?", "acceptedAnswer": { "@type": "Answer", "text": "Да, мы принимаем заявки 24/7 и выезжаем на ремонт компьютеров в любое время суток по Казани." } },
-        { "@type": "Question", "name": "Сколько стоит создание сайта в Казани?", "acceptedAnswer": { "@type": "Answer", "text": "Стоимость создания сайта зависит от сложности: лендинг — от 15 000 ₽, корпоративный сайт — от 30 000 ₽, интернет-магазин — от 50 000 ₽." } }
+        {
+          "@type": "Question",
+          "name": "Сколько стоит выезд мастера по ремонту компьютера в Казани?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Выезд мастера по Казани бесплатный при заказе ремонта. Стоимость работ озвучивается до начала ремонта."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Работаете ли вы круглосуточно?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да, мы принимаем заявки 24/7 и выезжаем на ремонт компьютеров в любое время суток по Казани."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Сколько стоит создание сайта в Казани?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Стоимость создания сайта зависит от сложности: лендинг — от 15 000 ₽, корпоративный сайт — от 30 000 ₽, интернет-магазин — от 50 000 ₽."
+          }
+        }
       ]
     }
     </script>
@@ -86,7 +138,7 @@
     <!-- Шрифты и иконки -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <style>
@@ -112,7 +164,7 @@
             --bg-soft: #f0f5ed;
             --text-dark: #2d3e33;
             --text-medium: #5a6b5f;
-            --text-light: #8a9a8f;
+            --text-light: #6b7a70;
             --white: #ffffff;
             --border-soft: #dde8d8;
             --shadow-soft: rgba(90, 138, 110, 0.08);
@@ -136,13 +188,21 @@
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        /* Якоря не прячутся под фиксированной шапкой */
         section[id] { scroll-margin-top: 90px; }
 
-        /* Общий стиль для пометки "необязательно" */
-        .optional { color: var(--text-light); font-weight: 400; font-size: 0.85rem; }
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 0;
+            z-index: 2000;
+            background: var(--pistachio-600);
+            color: var(--white);
+            padding: 10px 18px;
+            border-radius: 0 0 8px 0;
+            font-weight: 600;
+        }
+        .skip-link:focus { left: 0; }
 
-        /* Focus для клавиатуры */
         a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
             outline: 2px solid var(--pistachio-600);
             outline-offset: 2px;
@@ -359,7 +419,6 @@
         }
         .btn-solid:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(127, 160, 106, 0.4); }
 
-        /* Кнопка на всю ширину */
         .btn-block { display: flex; width: 100%; }
 
         /* --- УСЛУГИ --- */
@@ -525,8 +584,8 @@
         .contact .section-title h2 { color: var(--text-dark); }
         .contact .section-title p { color: var(--text-medium); }
 
-        .contact-form {
-            max-width: 650px;
+        .contact-card {
+            max-width: 700px;
             margin: 0 auto;
             background: var(--white);
             padding: 40px;
@@ -535,153 +594,69 @@
             border: 1px solid var(--pistachio-200);
             position: relative;
             z-index: 1;
+            text-align: center;
         }
 
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .form-group { margin-bottom: 20px; }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--text-dark);
-            font-size: 0.95rem;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 12px;
-            border-radius: 8px;
-            border: 1px solid var(--pistachio-200);
-            background: var(--bg-main);
-            color: var(--text-dark);
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--pistachio-400);
-            box-shadow: 0 0 0 3px var(--pistachio-100);
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder { color: var(--text-light); }
-
-        .form-group textarea { height: 100px; resize: vertical; }
-
-        .messengers-block {
-            border: 1px dashed var(--pistachio-300);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            background: var(--pistachio-50);
-        }
-
-        .messengers-block .block-title {
-            font-size: 0.95rem;
-            color: var(--text-dark);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 500;
-        }
-
-        .messengers-block .block-title i { color: var(--pistachio-600); }
-
-        .messenger-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
-
-        .messenger-field input {
-            width: 100%;
-            padding: 10px;
-            font-size: 0.9rem;
-            background: var(--white);
-            border: 1px solid var(--pistachio-200);
-            border-radius: 8px;
-            color: var(--text-dark);
-            font-family: 'Inter', sans-serif;
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-        .messenger-field input:focus {
-            outline: none;
-            border-color: var(--pistachio-400);
-            box-shadow: 0 0 0 3px var(--pistachio-100);
-        }
-
-        .messenger-field .messenger-label {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.85rem;
+        .contact-lead {
+            font-size: 1.05rem;
             color: var(--text-medium);
-            margin-bottom: 6px;
+            margin-bottom: 30px;
         }
 
-        .messenger-field .messenger-label .tg { color: #229ED9; }
-        .messenger-field .messenger-label .max { color: #8B5CF6; }
-        .messenger-field .messenger-label .wa { color: #25D366; }
+        .contact-phone {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--pistachio-600);
+            margin-bottom: 30px;
+            transition: color 0.3s;
+        }
+        .contact-phone:hover { color: var(--blue-600); }
+        .contact-phone i { font-size: 1.4rem; }
 
-        .form-info-note {
-            background: var(--blue-50);
-            border: 1px solid var(--blue-200);
-            color: var(--blue-600);
-            padding: 12px;
-            border-radius: 8px;
+        .messenger-buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .messenger-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px 15px;
+            border-radius: 12px;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .messenger-btn i { font-size: 1.8rem; }
+        .messenger-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            color: var(--white);
+        }
+
+        .messenger-btn.whatsapp { background: #25D366; }
+        .messenger-btn.telegram { background: #229ED9; }
+        .messenger-btn.max { background: #8B5CF6; }
+
+        .contact-note {
             font-size: 0.9rem;
-            margin-bottom: 20px;
+            color: var(--text-light);
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
+            gap: 8px;
         }
-
-        .submit-btn {
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(135deg, var(--pistachio-500) 0%, var(--blue-500) 100%);
-            color: var(--white);
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 6px 18px rgba(127, 160, 106, 0.3);
-        }
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(127, 160, 106, 0.4);
-        }
-        .submit-btn:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        /* Статус отправки формы */
-        .form-status {
-            margin-top: 15px;
-            padding: 12px;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            display: none;
-        }
-        .form-status.is-visible { display: block; }
-        .form-status.is-success {
-            background: var(--pistachio-100);
-            color: var(--pistachio-600);
-            border: 1px solid var(--pistachio-300);
-        }
-        .form-status.is-error {
-            background: #fdecea;
-            color: #b71c1c;
-            border: 1px solid #f5c6c0;
-        }
+        .contact-note i { color: var(--pistachio-500); }
 
         /* --- ФУТЕР --- */
         footer {
@@ -693,10 +668,6 @@
 
         footer .logo { color: var(--white); justify-content: center; margin-bottom: 20px; }
         footer .logo .city-badge { background: var(--pistachio-500); }
-
-        .social-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; flex-wrap: wrap; }
-        .social-links a { font-size: 1.5rem; transition: color 0.3s; color: var(--pistachio-200); }
-        .social-links a:hover { color: var(--white); }
 
         .copyright { font-size: 0.9rem; color: var(--pistachio-300); }
 
@@ -732,9 +703,9 @@
             .hero h1 { font-size: 1.8rem; }
             .hero-buttons { flex-direction: column; }
             .section-title h2 { font-size: 1.8rem; }
-            .form-row { grid-template-columns: 1fr; gap: 0; }
-            .messenger-grid { grid-template-columns: 1fr; }
-            .contact-form { padding: 25px; }
+            .contact-card { padding: 25px; }
+            .messenger-buttons { grid-template-columns: 1fr; }
+            .contact-phone { font-size: 1.3rem; }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -744,6 +715,8 @@
     </style>
 </head>
 <body>
+
+    <a href="#main" class="skip-link">Перейти к содержимому</a>
 
     <!-- ТОП-ПАНЕЛЬ -->
     <div class="top-bar">
@@ -771,13 +744,15 @@
                 <a href="#features">Почему мы</a>
                 <a href="#faq">Вопросы</a>
                 <a href="#contact">Контакты</a>
-                <a href="#contact" class="cta-btn">Заказать</a>
+                <a href="#contact" class="cta-btn">Связаться</a>
             </nav>
             <button class="burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false" aria-controls="navLinks">
                 <i class="fas fa-bars" id="burgerIcon" aria-hidden="true"></i>
             </button>
         </div>
     </header>
+
+    <main id="main">
 
     <!-- ГЕРОЙ -->
     <section class="hero">
@@ -911,75 +886,38 @@
         <div class="container">
             <div class="section-title">
                 <h2>Свяжитесь с нами</h2>
-                <p>Оставьте заявку в любое время суток — мы свяжемся с вами удобным способом</p>
+                <p>Выберите удобный способ связи — отвечаем круглосуточно</p>
             </div>
-            <form class="contact-form" id="orderForm" novalidate>
-                <div class="form-info-note">
-                    <i class="fas fa-headset" aria-hidden="true"></i>
-                    <span>Приём заявок осуществляется <strong>круглосуточно</strong>. Город: <strong>Казань</strong>.</span>
+            <div class="contact-card">
+                <p class="contact-lead">Позвоните нам или напишите в мессенджер — мы на связи 24/7</p>
+
+                <a href="tel:+79991234567" class="contact-phone">
+                    <i class="fas fa-phone-alt" aria-hidden="true"></i> +7 (999) 123-45-67
+                </a>
+
+                <div class="messenger-buttons">
+                    <a href="https://wa.me/79991234567" target="_blank" rel="noopener noreferrer" class="messenger-btn whatsapp" aria-label="Написать в WhatsApp">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        WhatsApp
+                    </a>
+                    <a href="https://t.me/+79991234567" target="_blank" rel="noopener noreferrer" class="messenger-btn telegram" aria-label="Написать в Telegram">
+                        <i class="fab fa-telegram" aria-hidden="true"></i>
+                        Telegram
+                    </a>
+                    <a href="https://max.ru/+79991234567" target="_blank" rel="noopener noreferrer" class="messenger-btn max" aria-label="Написать в MAX">
+                        <i class="fas fa-comment" aria-hidden="true"></i>
+                        MAX
+                    </a>
                 </div>
 
-                <div class="form-group">
-                    <label for="name">Ваше имя *</label>
-                    <input type="text" id="name" name="name" required placeholder="Иван Иванов" autocomplete="name">
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="phone">Телефон *</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="+7 (999) 123-45-67" autocomplete="tel">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Электронная почта *</label>
-                        <input type="email" id="email" name="email" required placeholder="ivan@example.com" autocomplete="email">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="service">Выберите услугу</label>
-                    <select id="service" name="service">
-                        <option value="repair">Ремонт компьютеров с выездом (Казань)</option>
-                        <option value="web">Создание сайта</option>
-                    </select>
-                </div>
-
-                <div class="messengers-block">
-                    <div class="block-title">
-                        <i class="fas fa-comment-dots" aria-hidden="true"></i>
-                        Укажите мессенджеры для связи <span class="optional">(необязательно)</span>
-                    </div>
-                    <div class="messenger-grid">
-                        <div class="messenger-field">
-                            <label class="messenger-label" for="telegram">
-                                <i class="fab fa-telegram tg" aria-hidden="true"></i> Telegram
-                            </label>
-                            <input type="text" id="telegram" name="telegram" placeholder="@username">
-                        </div>
-                        <div class="messenger-field">
-                            <label class="messenger-label" for="max">
-                                <i class="fas fa-comment max" aria-hidden="true"></i> MAX
-                            </label>
-                            <input type="text" id="max" name="max" placeholder="Ваш MAX">
-                        </div>
-                        <div class="messenger-field">
-                            <label class="messenger-label" for="whatsapp">
-                                <i class="fab fa-whatsapp wa" aria-hidden="true"></i> WhatsApp
-                            </label>
-                            <input type="tel" id="whatsapp" name="whatsapp" placeholder="+7 (999) 123-45-67">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Сообщение <span class="optional">(необязательно)</span></label>
-                    <textarea id="message" name="message" placeholder="Опишите вашу проблему или задачу..."></textarea>
-                </div>
-
-                <button type="submit" class="submit-btn" id="submitBtn">Отправить заявку 24/7</button>
-                <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
-            </form>
+                <p class="contact-note">
+                    <i class="fas fa-clock" aria-hidden="true"></i> Приём обращений круглосуточно · г. Казань
+                </p>
+            </div>
         </div>
     </section>
+
+    </main>
 
     <!-- ФУТЕР -->
     <footer>
@@ -993,22 +931,16 @@
                 <span><i class="fas fa-clock" aria-hidden="true"></i> Приём заказов — круглосуточно, 24/7</span>
                 <span><i class="fas fa-phone-alt" aria-hidden="true"></i> <a href="tel:+79991234567">+7 (999) 123-45-67</a></span>
             </div>
-            <div class="social-links">
-                <a href="#" aria-label="ВКонтакте"><i class="fab fa-vk" aria-hidden="true"></i></a>
-                <a href="#" aria-label="Telegram"><i class="fab fa-telegram" aria-hidden="true"></i></a>
-                <a href="#" aria-label="MAX"><i class="fas fa-comment" aria-hidden="true"></i></a>
-                <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-            </div>
-            <p class="copyright">&copy; 2024 TechMaster Казань. Работаем 24/7. Все права защищены.</p>
+            <p class="copyright">&copy; <span id="year">2025</span> TechMaster Казань. Работаем 24/7. Все права защищены.</p>
         </div>
     </footer>
 
     <script>
-        // ============================================================
-        // ВАЖНО: зарегистрируйтесь на https://formspree.io/ (бесплатно),
-        // создайте форму и замените YOUR_FORM_ID на свой ID.
-        // ============================================================
-        const FORMSPREE_ID = 'YOUR_FORM_ID';
+        // Динамический год
+        (function () {
+            const yearEl = document.getElementById('year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+        })();
 
         // ===== Мобильное меню =====
         const nav = document.getElementById('navLinks');
@@ -1022,98 +954,29 @@
             burgerBtn.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
         }
 
-        function closeMenu() {
+        function closeMenu(returnFocus) {
+            if (!nav.classList.contains('active')) return;
             nav.classList.remove('active');
             burgerBtn.setAttribute('aria-expanded', 'false');
             burgerIcon.className = 'fas fa-bars';
             burgerBtn.setAttribute('aria-label', 'Открыть меню');
+            if (returnFocus) burgerBtn.focus();
         }
 
         burgerBtn.addEventListener('click', toggleMenu);
 
-        // Делегирование: закрываем меню при клике по любой ссылке навигации
         nav.addEventListener('click', function (e) {
-            if (e.target.tagName === 'A') closeMenu();
+            if (e.target.tagName === 'A') closeMenu(false);
         });
 
-        // Закрытие меню при клике вне его (на мобильных)
         document.addEventListener('click', function (e) {
             if (nav.classList.contains('active') && !nav.contains(e.target) && !burgerBtn.contains(e.target)) {
-                closeMenu();
+                closeMenu(false);
             }
         });
 
-        // Закрытие меню по Escape
         document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape' && nav.classList.contains('active')) closeMenu();
-        });
-
-        // ===== Валидация формы =====
-        const orderForm = document.getElementById('orderForm');
-        const submitBtn = document.getElementById('submitBtn');
-        const formStatus = document.getElementById('formStatus');
-
-        const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const phoneRe = /^\+?[\d\s()-]{10,}$/;
-
-        function showStatus(message, type) {
-            formStatus.textContent = message;
-            formStatus.className = 'form-status is-visible ' + (type === 'success' ? 'is-success' : 'is-error');
-        }
-
-        function hideStatus() {
-            formStatus.className = 'form-status';
-            formStatus.textContent = '';
-        }
-
-        orderForm.addEventListener('submit', async function (e) {
-            e.preventDefault();
-            hideStatus();
-
-            const name = document.getElementById('name').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const email = document.getElementById('email').value.trim();
-
-            if (!name) {
-                showStatus('Пожалуйста, укажите ваше имя.', 'error');
-                document.getElementById('name').focus();
-                return;
-            }
-            if (!phoneRe.test(phone)) {
-                showStatus('Пожалуйста, введите корректный номер телефона.', 'error');
-                document.getElementById('phone').focus();
-                return;
-            }
-            if (!emailRe.test(email)) {
-                showStatus('Пожалуйста, введите корректный email.', 'error');
-                document.getElementById('email').focus();
-                return;
-            }
-
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Отправка...';
-
-            const formData = new FormData(this);
-
-            try {
-                const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-                    method: 'POST',
-                    body: formData,
-                    headers: { 'Accept': 'application/json' }
-                });
-
-                if (response.ok) {
-                    showStatus(`Спасибо, ${name}! Ваша заявка принята. Мы свяжемся с вами в ближайшее время.`, 'success');
-                    this.reset();
-                } else {
-                    showStatus('Не удалось отправить заявку. Пожалуйста, позвоните нам: +7 (999) 123-45-67', 'error');
-                }
-            } catch (err) {
-                showStatus('Ошибка сети. Пожалуйста, позвоните нам: +7 (999) 123-45-67', 'error');
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Отправить заявку 24/7';
-            }
+            if (e.key === 'Escape' && nav.classList.contains('active')) closeMenu(true);
         });
     </script>
 </body>
