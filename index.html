@@ -1,623 +1,553 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ремонт компьютеров и создание сайтов в Казани | RUSLANKE.RU</title>
-<meta name="description" content="Профессиональный ремонт компьютеров и ноутбуков в Казани. Создание сайтов под ключ. Быстро, недорого, с гарантией. Звоните: +7 (927) 249-79-22">
-<meta name="keywords" content="ремонт компьютеров Казань, ремонт ноутбуков Казань, создание сайтов Казань, компьютерная помощь, RUSLANKE.RU">
-<meta name="author" content="RUSLANKE.RU">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://ruslanke.ru/">
-
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ремонт компьютеров и создание сайтов в Казани | RUSLANKE.RU">
-<meta property="og:description" content="Профессиональный ремонт компьютеров и создание сайтов в Казани. Быстро, качественно, с гарантией.">
-<meta property="og:url" content="https://ruslanke.ru/">
-<meta property="og:locale" content="ru_RU">
-
-<!-- Микроразметка Schema.org -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "RUSLANKE.RU — Ремонт компьютеров и создание сайтов",
-  "image": "https://ruslanke.ru/logo.png",
-  "url": "https://ruslanke.ru/",
-  "telephone": "+79272497922",
-  "email": "ruslanke@yandex.ru",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Казань",
-    "addressCountry": "RU"
-  },
-  "areaServed": "Казань",
-  "priceRange": "₽₽",
-  "description": "Ремонт компьютеров и ноутбуков, создание сайтов в Казани"
-}
-</script>
-
-<style>
-  :root{
-    --bg:#eaf6f6;
-    --bg-alt:#dff0ef;
-    --primary:#2b7a78;
-    --primary-dark:#1f5e5c;
-    --accent:#3aafa9;
-    --text:#1d3a38;
-    --white:#ffffff;
-    --shadow:0 6px 20px rgba(43,122,120,.15);
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    font-family:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
-    color:var(--text);
-    background:var(--bg);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  .container{max-width:1100px;margin:0 auto;padding:0 20px;}
-  section{padding:60px 0;}
-  h1,h2,h3{line-height:1.25;color:var(--primary-dark);}
-  h1{font-size:clamp(1.7rem,4vw,2.6rem);}
-  h2{font-size:clamp(1.5rem,3.5vw,2.1rem);margin-bottom:30px;text-align:center;}
-  p{color:var(--text);}
-
-  /* Header */
-  header{
-    position:sticky;top:0;z-index:100;
-    background:rgba(255,255,255,.92);
-    backdrop-filter:blur(10px);
-    box-shadow:0 2px 12px rgba(43,122,120,.08);
-  }
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px;}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Ремонт компьютеров и создание сайтов в Казани | RUSLANKE.RU</title>
   
-  /* Стили для логотипа в шапке */
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px; 
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: var(--primary-dark);
-    text-decoration: none;
-    letter-spacing: .5px;
-  }
-  .logo svg {
-    width: 38px;
-    height: 38px;
-    flex-shrink: 0;
-    border-radius: 6px; 
-    overflow: hidden;
-  }
-  .logo span {
-    color: var(--accent);
-  }
-
-  .nav-links{display:flex;gap:22px;list-style:none; align-items: center;}
-  .nav-links a{text-decoration:none;color:var(--text);font-weight:500;font-size:.95rem;transition:color .2s; cursor: pointer;}
-  .nav-links a:hover{color:var(--accent);}
+  <!-- Основные SEO-теги -->
+  <meta name="description" content="Профессиональный ремонт компьютеров и ноутбуков в Казани. Создание сайтов под ключ. Быстро, недорого, с гарантией. Звоните: +7 (927) 249-79-22">
+  <meta name="keywords" content="ремонт компьютеров Казань, ремонт ноутбуков Казань, создание сайтов Казань, компьютерная помощь, RUSLANKE.RU">
+  <meta name="author" content="RUSLANKE.RU">
+  <meta name="robots" content="index, follow">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://ruslanke.ru/">
   
-  /* Стили для кнопки О нас */
-  .nav-links button {
-    background: none;
-    border: none;
-    color: var(--text);
-    font-weight: 500;
-    font-size: .95rem;
-    font-family: inherit;
-    cursor: pointer;
-    transition: color .2s;
-    padding: 0;
-  }
-  .nav-links button:hover { color: var(--accent); }
+  <!-- Гео-теги для поисковиков -->
+  <meta name="geo.region" content="RU-TA">
+  <meta name="geo.placename" content="Казань">
 
-  .phone-head{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--primary-dark);font-weight:700;font-size:1rem;white-space:nowrap;}
-  
-  /* Иконка телефона в шапке */
-  .phone-head svg {
-    width: 20px;
-    height: 20px;
-    fill: var(--primary-dark);
-    flex-shrink: 0;
-  }
+  <!-- Open Graph для соцсетей -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ремонт компьютеров и создание сайтов в Казани | RUSLANKE.RU">
+  <meta property="og:description" content="Профессиональный ремонт компьютеров и создание сайтов в Казани. Быстро, качественно, с гарантией.">
+  <meta property="og:url" content="https://ruslanke.ru/">
+  <meta property="og:locale" content="ru_RU">
 
-  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px;}
-  .burger span{width:24px;height:2px;background:var(--primary);border-radius:2px;}
-
-  /* Hero */
-  .hero{
-    background:linear-gradient(135deg,#d9efec 0%,#eaf6f6 60%,#e3f4f1 100%);
-    padding:80px 0 70px;text-align:center;position:relative;overflow:hidden;
+  <!-- Микроразметка Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "RUSLANKE.RU — Ремонт компьютеров и создание сайтов",
+    "image": "https://ruslanke.ru/logo.png",
+    "url": "https://ruslanke.ru/",
+    "telephone": "+79272497922",
+    "email": "ruslanke@yandex.ru",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Казань",
+      "addressCountry": "RU"
+    },
+    "areaServed": "Казань",
+    "priceRange": "₽₽",
+    "description": "Ремонт компьютеров и ноутбуков, создание сайтов в Казани"
   }
-  .hero::before{
-    content:"";position:absolute;width:400px;height:400px;border-radius:50%;
-    background:radial-gradient(circle,rgba(58,175,169,.18),transparent 70%);
-    top:-150px;right:-120px;
-  }
-  .hero::after{
-    content:"";position:absolute;width:350px;height:350px;border-radius:50%;
-    background:radial-gradient(circle,rgba(43,122,120,.12),transparent 70%);
-    bottom:-160px;left:-100px;
-  }
-  .hero .container{position:relative;z-index:2;}
-  .hero h1{margin-bottom:18px;}
-  .hero p{font-size:clamp(1rem,2.2vw,1.2rem);max-width:720px;margin:0 auto 32px;color:#2e5553;}
-  .hero-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  </script>
 
-  /* Buttons */
-  .btn{
-    display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:50px;
-    text-decoration:none;font-weight:600;font-size:1rem;transition:transform .2s,box-shadow .2s,background .2s;
-    border:none;cursor:pointer;
-  }
-  .btn-primary{background:var(--primary);color:#fff;box-shadow:0 6px 16px rgba(43,122,120,.3);}
-  .btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px);box-shadow:0 10px 22px rgba(43,122,120,.35);}
-  
-  /* Иконка телефона в главной кнопке */
-  .btn-primary svg {
-    width: 18px;
-    height: 18px;
-    fill: currentColor;
-  }
-
-  .btn-outline{background:#fff;color:var(--primary-dark);border:2px solid var(--accent);}
-  .btn-outline:hover{background:var(--accent);color:#fff;transform:translateY(-2px);}
-
-  /* Services */
-  .services{background:var(--bg);}
-  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;}
-  .card{
-    background:#fff;border-radius:20px;padding:32px 26px;box-shadow:var(--shadow);
-    transition:transform .25s,box-shadow .25s;border:1px solid rgba(58,175,169,.15);
-  }
-  .card:hover{transform:translateY(-6px);box-shadow:0 14px 32px rgba(43,122,120,.18);}
-  .card .icon{font-size:2.2rem;margin-bottom:14px;display:block;}
-  .card h3{font-size:1.25rem;margin-bottom:10px;}
-  .card p{font-size:.95rem;color:#3f6360;}
-  .card ul{margin-top:12px;padding-left:18px;font-size:.92rem;color:#3f6360;}
-  .card ul li{margin-bottom:4px;}
-
-  /* Contact */
-  .contact{background:linear-gradient(135deg,#e3f4f1,#d9efec);}
-  .contact-box{
-    background:#fff;border-radius:24px;padding:40px;max-width:760px;margin:0 auto;
-    box-shadow:var(--shadow);text-align:center;
-  }
-  .contact-box h2{text-align:center;margin-bottom:10px;}
-  .contact-box > p{color:#3f6360;margin-bottom:26px;}
-  .contact-info{display:flex;flex-direction:column;gap:14px;margin-bottom:28px;align-items:center;}
-  .contact-info a{
-    display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--primary-dark);
-    font-weight:600;font-size:1.05rem;padding:10px 18px;border-radius:12px;transition:background .2s;
-    word-break:break-word;
-  }
-  .contact-info a:hover{background:var(--bg-alt);}
-
-  /* Иконки телефона и почты в контактах */
-  .contact-info svg {
-    width: 22px;
-    height: 22px;
-    fill: var(--primary-dark);
-    flex-shrink: 0;
-  }
-
-  .messengers{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-  .mess{
-    display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:50px;
-    text-decoration:none;font-weight:600;color:#fff;transition:transform .2s,filter .2s;
-    font-size:.95rem;
-  }
-  .mess:hover{transform:translateY(-3px);filter:brightness(1.08);}
-  .whatsapp{background:#25D366;}
-  .telegram{background:#229ED9;}
-  .max{background:#5b4bdb;}
-
-  /* Footer */
-  footer{background:var(--primary-dark);color:#d5ebe9;padding:30px 0;text-align:center;font-size:.9rem;}
-  footer a{color:#b6e4e0;text-decoration:none; display: inline-flex; align-items: center; gap: 5px; vertical-align: middle;}
-  footer a:hover{text-decoration:underline;}
-
-  /* Иконка телефона в подвале */
-  footer svg {
-    width: 16px;
-    height: 16px;
-    fill: currentColor;
-  }
-
-  /* =========================================
-     Плавающие кнопки мессенджеров (справа)
-     ========================================= */
-  .floating-messengers {
-    position: fixed;
-    right: 0;
-    bottom: 12%;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    z-index: 999;
-  }
-
-  .float-btn {
-    width: 54px;
-    height: 54px;
-    border-radius: 50% 0 0 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    box-shadow: -2px 4px 12px rgba(0,0,0,.15);
-    transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
-    text-decoration: none;
-    padding-left: 4px;
-  }
-
-  .float-btn svg {
-    width: 26px;
-    height: 26px;
-    fill: currentColor;
-  }
-
-  .float-btn:hover {
-    transform: translateX(-5px) scale(1.02);
-    box-shadow: -6px 4px 16px rgba(0,0,0,.25);
-    filter: brightness(1.1);
-  }
-
-  .float-wa { background-color: #25D366; }
-  .float-tg { background-color: #229ED9; }
-  .float-max { background-color: #5b4bdb; }
-
-  /* =========================================
-     Модальное окно "О нас"
-     ========================================= */
-  .modal-overlay {
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(29, 58, 56, 0.6);
-    backdrop-filter: blur(4px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none; 
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    padding: 20px;
-  }
-
-  .modal-overlay.active {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto; 
-  }
-
-  .modal-box {
-    background: #fff;
-    border-radius: 24px;
-    padding: 40px;
-    max-width: 650px;
-    width: 100%;
-    box-shadow: 0 10px 40px rgba(0,0,0,.2);
-    position: relative;
-    transform: translateY(20px);
-    transition: transform 0.3s ease;
-  }
-
-  .modal-overlay.active .modal-box {
-    transform: translateY(0);
-  }
-
-  .modal-box h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: var(--primary-dark);
-  }
-
-  .modal-box p {
-    color: #3f6360;
-    font-size: 1.05rem;
-    line-height: 1.8;
-    margin-bottom: 0;
-    text-align: justify;
-  }
-
-  .modal-close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: var(--bg-alt);
-    border: none;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary-dark);
-    font-size: 1.2rem;
-    transition: background 0.2s;
-  }
-
-  .modal-close:hover {
-    background: #cce5e3;
-  }
-
-  /* На мобильных делаем кнопки чуть меньше */
-  @media (max-width: 820px) {
-    .nav-links{
-      position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;
-      padding:16px 20px;gap:14px;box-shadow:0 10px 20px rgba(43,122,120,.12);
-      display:none;border-top:1px solid #e3f4f1;
+  <style>
+    :root{
+      --bg:#eaf6f6;
+      --bg-alt:#dff0ef;
+      --primary:#2b7a78;
+      --primary-dark:#1f5e5c;
+      --accent:#3aafa9;
+      --text:#1d3a38;
+      --white:#ffffff;
+      --shadow:0 6px 20px rgba(43,122,120,.15);
     }
-    .nav-links.open{display:flex;}
-    .nav-links button {
-      text-align: left;
-      width: 100%;
-      font-size: 1rem;
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      font-family:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      overflow-x: hidden; /* Защита от горизонтального скролла */
     }
-    .nav-links a { 
-      display: block; 
-      width: 100%; 
-      font-size: 1rem;
-    }
-    .burger{display:flex;}
-    .phone-head{font-size:.9rem;}
-    section{padding:44px 0;}
-    .contact-box{padding:28px 18px;}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px;}
+    section{padding:60px 0;}
+    h1,h2,h3{line-height:1.25;color:var(--primary-dark);}
+    h1{font-size:clamp(1.7rem,4vw,2.6rem);}
+    h2{font-size:clamp(1.5rem,3.5vw,2.1rem);margin-bottom:30px;text-align:center;}
+    p{color:var(--text);}
 
+    /* Header */
+    header{
+      position:sticky;top:0;z-index:100;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(10px);
+      box-shadow:0 2px 12px rgba(43,122,120,.08);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px;}
+    
+    /* Логотип */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px; 
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--primary-dark);
+      text-decoration: none;
+      letter-spacing: .5px;
+    }
+    .logo svg {
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+      border-radius: 6px; 
+      overflow: hidden;
+    }
+    .logo span { color: var(--accent); }
+
+    .nav-links{display:flex;gap:22px;list-style:none; align-items: center;}
+    
+    /* Универсальные стили для ссылок и кнопок в меню */
+    .nav-links a, .nav-links button {
+      text-decoration:none;
+      color:var(--text);
+      font-weight:500;
+      font-size:.95rem;
+      transition:color .2s;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: inherit;
+      padding: 0;
+      display: inline-block;
+    }
+    .nav-links a:hover, .nav-links button:hover { color: var(--accent); }
+
+    .phone-head{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--primary-dark);font-weight:700;font-size:1rem;white-space:nowrap;}
+    .phone-head svg { width: 20px; height: 20px; fill: var(--primary-dark); flex-shrink: 0; }
+
+    .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px;}
+    .burger span{width:24px;height:2px;background:var(--primary);border-radius:2px; transition: 0.3s;}
+
+    /* Hero */
+    .hero{
+      background:linear-gradient(135deg,#d9efec 0%,#eaf6f6 60%,#e3f4f1 100%);
+      padding:80px 0 70px;text-align:center;position:relative;overflow:hidden;
+    }
+    .hero::before{
+      content:"";position:absolute;width:400px;height:400px;border-radius:50%;
+      background:radial-gradient(circle,rgba(58,175,169,.18),transparent 70%);
+      top:-150px;right:-120px;
+    }
+    .hero::after{
+      content:"";position:absolute;width:350px;height:350px;border-radius:50%;
+      background:radial-gradient(circle,rgba(43,122,120,.12),transparent 70%);
+      bottom:-160px;left:-100px;
+    }
+    .hero .container{position:relative;z-index:2;}
+    .hero h1{margin-bottom:18px;}
+    .hero p{font-size:clamp(1rem,2.2vw,1.2rem);max-width:720px;margin:0 auto 32px;color:#2e5553;}
+    .hero-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+    /* Buttons */
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;border-radius:50px;
+      text-decoration:none;font-weight:600;font-size:1rem;transition:transform .2s,box-shadow .2s,background .2s;
+      border:none;cursor:pointer; text-align: center;
+    }
+    .btn-primary{background:var(--primary);color:#fff;box-shadow:0 6px 16px rgba(43,122,120,.3);}
+    .btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px);box-shadow:0 10px 22px rgba(43,122,120,.35);}
+    .btn-primary svg { width: 18px; height: 18px; fill: currentColor; }
+    
+    .btn-outline{background:#fff;color:var(--primary-dark);border:2px solid var(--accent);}
+    .btn-outline:hover{background:var(--accent);color:#fff;transform:translateY(-2px);}
+
+    /* Services */
+    .services{background:var(--bg);}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;}
+    .card{
+      background:#fff;border-radius:20px;padding:32px 26px;box-shadow:var(--shadow);
+      transition:transform .25s,box-shadow .25s;border:1px solid rgba(58,175,169,.15);
+    }
+    .card:hover{transform:translateY(-6px);box-shadow:0 14px 32px rgba(43,122,120,.18);}
+    .card .icon{font-size:2.2rem;margin-bottom:14px;display:block;}
+    .card h3{font-size:1.25rem;margin-bottom:10px;}
+    .card p{font-size:.95rem;color:#3f6360;}
+    .card ul{margin-top:12px;padding-left:18px;font-size:.92rem;color:#3f6360;}
+    .card ul li{margin-bottom:4px;}
+
+    /* Contact */
+    .contact{background:linear-gradient(135deg,#e3f4f1,#d9efec);}
+    .contact-box{
+      background:#fff;border-radius:24px;padding:40px;max-width:760px;margin:0 auto;
+      box-shadow:var(--shadow);text-align:center;
+    }
+    .contact-box h2{text-align:center;margin-bottom:10px;}
+    .contact-box > p{color:#3f6360;margin-bottom:26px;}
+    .contact-info{display:flex;flex-direction:column;gap:14px;margin-bottom:28px;align-items:center;}
+    .contact-info a{
+      display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--primary-dark);
+      font-weight:600;font-size:1.05rem;padding:10px 18px;border-radius:12px;transition:background .2s;
+      word-break:break-word;
+    }
+    .contact-info a:hover{background:var(--bg-alt);}
+    .contact-info svg { width: 22px; height: 22px; fill: var(--primary-dark); flex-shrink: 0; }
+
+    .messengers{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+    .mess{
+      display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:50px;
+      text-decoration:none;font-weight:600;color:#fff;transition:transform .2s,filter .2s;
+      font-size:.95rem;
+    }
+    .mess:hover{transform:translateY(-3px);filter:brightness(1.08);}
+    .whatsapp{background:#25D366;}
+    .telegram{background:#229ED9;}
+    .max{background:#5b4bdb;}
+
+    /* Footer */
+    footer{background:var(--primary-dark);color:#d5ebe9;padding:30px 0;text-align:center;font-size:.9rem;}
+    footer a{color:#b6e4e0;text-decoration:none; display: inline-flex; align-items: center; gap: 5px; vertical-align: middle;}
+    footer a:hover{text-decoration:underline;}
+    footer svg { width: 16px; height: 16px; fill: currentColor; }
+
+    /* Плавающие кнопки мессенджеров */
     .floating-messengers {
-      gap: 10px;
-      bottom: 15%;
+      position: fixed;
+      right: 0;
+      bottom: 12%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 999;
     }
     .float-btn {
-      width: 48px;
-      height: 48px;
+      width: 54px;
+      height: 54px;
+      border-radius: 50% 0 0 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      box-shadow: -2px 4px 12px rgba(0,0,0,.15);
+      transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+      text-decoration: none;
+      padding-left: 4px;
     }
-    .float-btn svg {
-      width: 22px;
-      height: 22px;
+    .float-btn svg { width: 26px; height: 26px; fill: currentColor; }
+    .float-btn:hover {
+      transform: translateX(-5px) scale(1.02);
+      box-shadow: -6px 4px 16px rgba(0,0,0,.25);
+      filter: brightness(1.1);
     }
-    
-    .logo { font-size: 1.1rem; gap: 8px; }
-    .logo svg { width: 32px; height: 32px; border-radius: 5px; }
-    
+    .float-wa { background-color: #25D366; }
+    .float-tg { background-color: #229ED9; }
+    .float-max { background-color: #5b4bdb; }
+
+    /* Модальное окно "О нас" */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(29, 58, 56, 0.6);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none; 
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      padding: 20px;
+    }
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto; 
+    }
     .modal-box {
-      padding: 30px 20px;
+      background: #fff;
+      border-radius: 24px;
+      padding: 40px;
+      max-width: 650px;
+      width: 100%;
+      box-shadow: 0 10px 40px rgba(0,0,0,.2);
+      position: relative;
+      transform: translateY(20px);
+      transition: transform 0.3s ease;
     }
-    .modal-box p {
-      font-size: 0.95rem;
-      text-align: left;
+    .modal-overlay.active .modal-box { transform: translateY(0); }
+    .modal-box h2 { text-align: center; margin-bottom: 20px; color: var(--primary-dark); }
+    .modal-box p { color: #3f6360; font-size: 1.05rem; line-height: 1.8; margin-bottom: 0; text-align: justify; }
+    
+    .modal-close {
+      position: absolute;
+      top: 15px; right: 15px;
+      background: var(--bg-alt);
+      border: none;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--primary-dark);
+      font-size: 1.2rem;
+      transition: background 0.2s;
     }
-  }
-  @media (max-width:400px){
-    .phone-head span{display:none;}
-  }
-</style>
+    .modal-close:hover { background: #cce5e3; }
+
+    /* ========== МОБИЛЬНАЯ АДАПТАЦИЯ ========== */
+    @media (max-width: 820px) {
+      .nav-links{
+        position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;
+        padding:16px 20px;gap:14px;box-shadow:0 10px 20px rgba(43,122,120,.12);
+        display:none;border-top:1px solid #e3f4f1;
+        align-items: flex-start;
+      }
+      .nav-links.open{display:flex;}
+      
+      .nav-links a, .nav-links button {
+        text-align: left;
+        width: 100%;
+        font-size: 1.05rem;
+        padding: 8px 0;
+      }
+      
+      .burger{display:flex;}
+      .phone-head span{ display: none; } /* Оставляем только иконку на телефоне */
+      .phone-head svg { width: 24px; height: 24px; }
+      
+      section{padding:44px 0;}
+      .contact-box{padding:28px 18px;}
+      .floating-messengers { gap: 10px; bottom: 15%; }
+      .float-btn { width: 48px; height: 48px; }
+      .float-btn svg { width: 22px; height: 22px; }
+      
+      .logo { font-size: 1.1rem; gap: 8px; }
+      .logo svg { width: 32px; height: 32px; border-radius: 5px; }
+      
+      .modal-box { padding: 30px 20px; }
+      .modal-box p { font-size: 0.95rem; text-align: left; }
+      
+      .btn { width: 100%; max-width: 300px; } /* Кнопки на всю ширину на мобильных */
+    }
+  </style>
 </head>
 <body>
 
-<!-- Модальное окно "О нас" -->
-<div class="modal-overlay" id="aboutModal">
-  <div class="modal-box">
-    <button class="modal-close" aria-label="Закрыть окно">&times;</button>
-    <h2>О нас</h2>
-    <p>Наша команда состоит из 10 опытных специалистов, каждый из которых является настоящим профессионалом в своей сфере. Мы специализируемся на ремонте компьютеров и создании сайтов, обеспечивая высочайшее качество услуг. За время работы мы успешно выполнили более 1000 заказов по всему миру, помогая клиентам решать самые разные задачи. Мы гордимся тем, что к нам обращаются как частные лица, так и крупные компании, доверяя нам свою технику и digital-проекты. Наш подход основан на индивидуальном внимании к каждому клиенту и глубоком понимании технических нюансов. Мы постоянно развиваемся и следим за современными технологиями, чтобы предлагать лучшие решения. Выбирая нас, вы получаете надежного партнера, нацеленного на долгосрочное и плодотворное сотрудничество.</p>
+  <!-- Модальное окно "О нас" -->
+  <div class="modal-overlay" id="aboutModal" role="dialog" aria-modal="true" aria-labelledby="aboutTitle">
+    <div class="modal-box">
+      <button class="modal-close" aria-label="Закрыть окно">&times;</button>
+      <h2 id="aboutTitle">О нас</h2>
+      <p>Наша команда состоит из 10 опытных специалистов, каждый из которых является настоящим профессионалом в своей сфере. Мы специализируемся на ремонте компьютеров и создании сайтов, обеспечивая высочайшее качество услуг. За время работы мы успешно выполнили более 1000 заказов по всему миру, помогая клиентам решать самые разные задачи. Мы гордимся тем, что к нам обращаются как частные лица, так и крупные компании, доверяя нам свою технику и digital-проекты. Наш подход основан на индивидуальном внимании к каждому клиенту и глубоком понимании технических нюансов. Мы постоянно развиваемся и следим за современными технологиями, чтобы предлагать лучшие решения. Выбирая нас, вы получаете надежного партнера, нацеленного на долгосрочное и плодотворное сотрудничество.</p>
+    </div>
   </div>
-</div>
 
-<!-- Плавающие кнопки справа -->
-<div class="floating-messengers">
-  <a href="https://wa.me/79272497922" class="float-btn float-wa" target="_blank" rel="noopener" aria-label="Написать в WhatsApp" title="WhatsApp">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-  </a>
-  <a href="https://t.me/R200124" class="float-btn float-tg" target="_blank" rel="noopener" aria-label="Написать в Telegram" title="Telegram">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-  </a>
-  <a href="https://max.ru/u/R200124" class="float-btn float-max" target="_blank" rel="noopener" aria-label="Написать в MAX" title="MAX">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
-  </a>
-</div>
-
-<header>
-  <div class="container nav">
-    <a href="#" class="logo">
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <rect width="100" height="100" fill="var(--accent)" />
-        <g stroke="var(--primary-dark)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none">
-          <polyline points="35,35 20,50 35,65" />
-          <polyline points="65,35 80,50 65,65" />
-          <line x1="57" y1="30" x2="43" y2="70" />
-        </g>
-      </svg>
-      <div>RUSLANKE<span>.RU</span></div>
+  <!-- Плавающие кнопки справа -->
+  <div class="floating-messengers">
+    <a href="https://wa.me/79272497922" class="float-btn float-wa" target="_blank" rel="noopener" aria-label="Написать в WhatsApp" title="WhatsApp">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
     </a>
-    
-    <nav>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#services" class="scroll-link">Услуги</a></li>
-        <li><button id="openAboutBtn">О нас</button></li>
-        <li><a href="#contact" class="scroll-link">Контакты</a></li>
-      </ul>
-    </nav>
-    <!-- Иконка телефона в шапке -->
-    <a href="tel:+79272497922" class="phone-head">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <span>+7 (927) 249-79-22</span>
+    <a href="https://t.me/R200124" class="float-btn float-tg" target="_blank" rel="noopener" aria-label="Написать в Telegram" title="Telegram">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
     </a>
-    <button class="burger" id="burger" aria-label="Меню">
-      <span></span><span></span><span></span>
-    </button>
+    <a href="https://max.ru/u/R200124" class="float-btn float-max" target="_blank" rel="noopener" aria-label="Написать в MAX" title="MAX">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+    </a>
   </div>
-</header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <h1>Ремонт компьютеров и создание сайтов в Казани</h1>
-    <p>Быстрая и качественная компьютерная помощь, ремонт ноутбуков и ПК, разработка сайтов под ключ. Работаем с гарантией и по доступным ценам.</p>
-    <div class="hero-buttons">
-      <!-- Кнопка с иконкой телефона -->
-      <a href="tel:+79272497922" class="btn btn-primary">
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo" aria-label="На главную">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" fill="var(--accent)" />
+          <g stroke="var(--primary-dark)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <polyline points="35,35 20,50 35,65" />
+            <polyline points="65,35 80,50 65,65" />
+            <line x1="57" y1="30" x2="43" y2="70" />
+          </g>
+        </svg>
+        <div>RUSLANKE<span>.RU</span></div>
+      </a>
+      
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#services" class="scroll-link">Услуги</a></li>
+          <li><button id="openAboutBtn">О нас</button></li>
+          <li><a href="#contact" class="scroll-link">Контакты</a></li>
+        </ul>
+      </nav>
+      
+      <a href="tel:+79272497922" class="phone-head" aria-label="Позвонить по номеру +7 (927) 249-79-22">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        Позвонить
+        <span>+7 (927) 249-79-22</span>
       </a>
-      <a href="#contact" class="btn btn-outline scroll-link">Связаться</a>
+      
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- SERVICES -->
-<section class="services" id="services">
-  <div class="container">
-    <h2>Наши услуги</h2>
-    <div class="cards">
-      <div class="card">
-        <span class="icon">💻</span>
-        <h3>Ремонт компьютеров и ноутбуков</h3>
-        <p>Диагностика и ремонт ПК и ноутбуков любой сложности в Казани.</p>
-        <ul>
-          <li>Чистка от пыли и замена термопасты</li>
-          <li>Замена комплектующих и матрицы</li>
-          <li>Установка Windows и ПО</li>
-          <li>Удаление вирусов</li>
-          <li>Ремонт после залития</li>
-        </ul>
-      </div>
-      <div class="card">
-        <span class="icon">🌐</span>
-        <h3>Создание сайтов</h3>
-        <p>Разработка современных сайтов под ключ для бизнеса.</p>
-        <ul>
-          <li>Лендинги и визитки</li>
-          <li>Адаптив под смартфоны</li>
-          <li>SEO-оптимизация</li>
-          <li>Подключение домена и хостинга</li>
-        </ul>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>Ремонт компьютеров и создание сайтов в Казани</h1>
+      <p>Быстрая и качественная компьютерная помощь, ремонт ноутбуков и ПК, разработка сайтов под ключ. Работаем с гарантией и по доступным ценам.</p>
+      <div class="hero-buttons">
+        <a href="tel:+79272497922" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Позвонить
+        </a>
+        <a href="#contact" class="btn btn-outline scroll-link">Связаться</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="container">
-    <div class="contact-box">
-      <h2>Свяжитесь с нами</h2>
-      <p>Позвоните, напишите в мессенджер или на почту — ответим быстро!</p>
-      <div class="contact-info">
-        <!-- Иконка телефона в контактах -->
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2>Наши услуги</h2>
+      <div class="cards">
+        <div class="card">
+          <span class="icon" aria-hidden="true">💻</span>
+          <h3>Ремонт компьютеров и ноутбуков</h3>
+          <p>Диагностика и ремонт ПК и ноутбуков любой сложности в Казани.</p>
+          <ul>
+            <li>Чистка от пыли и замена термопасты</li>
+            <li>Замена комплектующих и матрицы</li>
+            <li>Установка Windows и ПО</li>
+            <li>Удаление вирусов</li>
+            <li>Ремонт после залития</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="icon" aria-hidden="true">🌐</span>
+          <h3>Создание сайтов</h3>
+          <p>Разработка современных сайтов под ключ для бизнеса.</p>
+          <ul>
+            <li>Лендинги и визитки</li>
+            <li>Адаптив под смартфоны</li>
+            <li>SEO-оптимизация</li>
+            <li>Подключение домена и хостинга</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-box">
+        <h2>Свяжитесь с нами</h2>
+        <p>Позвоните, напишите в мессенджер или на почту — ответим быстро!</p>
+        <div class="contact-info">
+          <a href="tel:+79272497922">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            +7 (927) 249-79-22
+          </a>
+          <a href="mailto:ruslanke@yandex.ru">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="22,6 12,13 2,6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            ruslanke@yandex.ru
+          </a>
+        </div>
+        <div class="messengers">
+          <a href="https://wa.me/79272497922" class="mess whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://t.me/R200124" class="mess telegram" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://max.ru/u/R200124" class="mess max" target="_blank" rel="noopener">MAX</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> RUSLANKE.RU — Ремонт компьютеров и создание сайтов в Казани</p>
+      <p style="margin-top:8px;">
         <a href="tel:+79272497922">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           +7 (927) 249-79-22
-        </a>
-        <!-- Иконка почты -->
-        <a href="mailto:ruslanke@yandex.ru">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <polyline points="22,6 12,13 2,6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          ruslanke@yandex.ru
-        </a>
-      </div>
-      <div class="messengers">
-        <a href="https://wa.me/79272497922" class="mess whatsapp" target="_blank" rel="noopener">WhatsApp</a>
-        <a href="https://t.me/R200124" class="mess telegram" target="_blank" rel="noopener">Telegram</a>
-        <a href="https://max.ru/u/R200124" class="mess max" target="_blank" rel="noopener">MAX</a>
-      </div>
+        </a> ·
+        <a href="mailto:ruslanke@yandex.ru">ruslanke@yandex.ru</a>
+      </p>
     </div>
-  </div>
-</section>
+  </footer>
 
-<footer>
-  <div class="container">
-    <p>© <span id="year"></span> RUSLANKE.RU — Ремонт компьютеров и создание сайтов в Казани</p>
-    <p style="margin-top:8px;">
-      <!-- Иконка телефона в подвале -->
-      <a href="tel:+79272497922">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        +7 (927) 249-79-22
-      </a> ·
-      <a href="mailto:ruslanke@yandex.ru">ruslanke@yandex.ru</a>
-    </p>
-  </div>
-</footer>
+  <script>
+    // Год в футере
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Мобильное меню
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+    
+    burger.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      burger.setAttribute('aria-expanded', isOpen);
+    });
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-  
-  // Мобильное меню
-  const burger = document.getElementById('burger');
-  const navLinks = document.getElementById('navLinks');
-  burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    // Плавная прокрутка (Услуги, Контакты, Связаться)
+    const scrollLinks = document.querySelectorAll('.scroll-link');
+    scrollLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault(); 
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          // Закрываем мобильное меню
+          navLinks.classList.remove('open');
+          burger.setAttribute('aria-expanded', 'false');
+          
+          // Высчитываем отступ с учетом фиксированной шапки
+          const headerHeight = document.querySelector('header').offsetHeight;
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 10; 
+    
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
 
-  // ==========================================
-  // 1. ПЛАВНАЯ ПРОКРУТКА
-  // ==========================================
-  const scrollLinks = document.querySelectorAll('.scroll-link');
-  
-  scrollLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault(); 
-      
-      const targetId = this.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
-      
-      if (targetElement) {
-        navLinks.classList.remove('open');
-        const headerHeight = document.querySelector('header').offsetHeight;
-        const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
-  
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
+    // Модальное окно "О нас"
+    const aboutModal = document.getElementById('aboutModal');
+    const openAboutBtn = document.getElementById('openAboutBtn');
+    const closeAboutBtn = document.querySelector('.modal-close');
+
+    openAboutBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      aboutModal.classList.add('active');
+      navLinks.classList.remove('open'); 
+      burger.setAttribute('aria-expanded', 'false');
+    });
+
+    closeAboutBtn.addEventListener('click', () => {
+      aboutModal.classList.remove('active');
+    });
+
+    aboutModal.addEventListener('click', (e) => {
+      if (e.target === aboutModal) {
+        aboutModal.classList.remove('active');
       }
     });
-  });
 
-  // ==========================================
-  // 2. ЛОГИКА ОКНА "О НАС"
-  // ==========================================
-  const aboutModal = document.getElementById('aboutModal');
-  const openAboutBtn = document.getElementById('openAboutBtn');
-  const closeAboutBtn = document.querySelector('.modal-close');
-
-  openAboutBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    aboutModal.classList.add('active');
-    navLinks.classList.remove('open'); 
-  });
-
-  closeAboutBtn.addEventListener('click', () => {
-    aboutModal.classList.remove('active');
-  });
-
-  aboutModal.addEventListener('click', (e) => {
-    if (e.target === aboutModal) {
-      aboutModal.classList.remove('active');
-    }
-  });
-
-  document.addEventListener('keydown', () => {
-    if (aboutModal.classList.contains('active')) {
-      aboutModal.classList.remove('active');
-    }
-  });
-</script>
-
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && aboutModal.classList.contains('active')) {
+        aboutModal.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 </html>
