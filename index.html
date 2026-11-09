@@ -66,8 +66,7 @@
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт компьютеров с выездом в Казани", "description": "Ремонт ПК и ноутбуков с выездом мастера по Казани, круглосуточно 24/7" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Создание сайтов в Казани", "description": "Разработка сайтов под ключ: лендинги, интернет-магазины, корпоративные сайты" } }
         ]
-      },
-      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "127" }
+      }
     }
     </script>
 
@@ -137,6 +136,12 @@
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
+        /* Якоря не прячутся под фиксированной шапкой */
+        section[id] { scroll-margin-top: 90px; }
+
+        /* Общий стиль для пометки "необязательно" */
+        .optional { color: var(--text-light); font-weight: 400; font-size: 0.85rem; }
+
         /* Focus для клавиатуры */
         a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
             outline: 2px solid var(--pistachio-600);
@@ -188,7 +193,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 70px;
+            min-height: 70px;
+            padding-top: 8px;
+            padding-bottom: 8px;
         }
 
         .logo {
@@ -229,6 +236,7 @@
         .cta-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 18px rgba(127, 160, 106, 0.35);
+            color: var(--white);
         }
 
         .burger {
@@ -350,6 +358,9 @@
             justify-content: center;
         }
         .btn-solid:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(127, 160, 106, 0.4); }
+
+        /* Кнопка на всю ширину */
+        .btn-block { display: flex; width: 100%; }
 
         /* --- УСЛУГИ --- */
         .services { padding: 100px 0; background: var(--white); }
@@ -510,6 +521,7 @@
             pointer-events: none;
         }
 
+        .contact .section-title { position: relative; z-index: 1; }
         .contact .section-title h2 { color: var(--text-dark); }
         .contact .section-title p { color: var(--text-medium); }
 
@@ -534,12 +546,6 @@
             font-weight: 500;
             color: var(--text-dark);
             font-size: 0.95rem;
-        }
-
-        .form-group label .optional {
-            color: var(--text-light);
-            font-weight: 400;
-            font-size: 0.85rem;
         }
 
         .form-group input,
@@ -596,6 +602,16 @@
             padding: 10px;
             font-size: 0.9rem;
             background: var(--white);
+            border: 1px solid var(--pistachio-200);
+            border-radius: 8px;
+            color: var(--text-dark);
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .messenger-field input:focus {
+            outline: none;
+            border-color: var(--pistachio-400);
+            box-shadow: 0 0 0 3px var(--pistachio-100);
         }
 
         .messenger-field .messenger-label {
@@ -647,6 +663,26 @@
             transform: none;
         }
 
+        /* Статус отправки формы */
+        .form-status {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            display: none;
+        }
+        .form-status.is-visible { display: block; }
+        .form-status.is-success {
+            background: var(--pistachio-100);
+            color: var(--pistachio-600);
+            border: 1px solid var(--pistachio-300);
+        }
+        .form-status.is-error {
+            background: #fdecea;
+            color: #b71c1c;
+            border: 1px solid #f5c6c0;
+        }
+
         /* --- ФУТЕР --- */
         footer {
             background: var(--text-dark);
@@ -667,6 +703,8 @@
         .footer-info { margin-bottom: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 0.9rem; }
         .footer-info span { display: inline-flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; }
         .footer-info i { color: var(--pistachio-400); }
+        .footer-info a { color: var(--pistachio-200); }
+        .footer-info a:hover { color: var(--white); }
 
         /* --- АДАПТИВНОСТЬ --- */
         @media (max-width: 768px) {
@@ -678,7 +716,7 @@
             .nav-links {
                 display: none;
                 position: absolute;
-                top: 70px;
+                top: 100%;
                 left: 0;
                 width: 100%;
                 background: var(--white);
@@ -729,13 +767,13 @@
                 <span class="city-badge">Казань</span>
             </a>
             <nav class="nav-links" id="navLinks" aria-label="Основное меню">
-                <a href="#services" onclick="closeMenu()">Услуги</a>
-                <a href="#features" onclick="closeMenu()">Почему мы</a>
-                <a href="#faq" onclick="closeMenu()">Вопросы</a>
-                <a href="#contact" onclick="closeMenu()">Контакты</a>
-                <a href="#contact" class="cta-btn" onclick="closeMenu()">Заказать</a>
+                <a href="#services">Услуги</a>
+                <a href="#features">Почему мы</a>
+                <a href="#faq">Вопросы</a>
+                <a href="#contact">Контакты</a>
+                <a href="#contact" class="cta-btn">Заказать</a>
             </nav>
-            <button class="burger" id="burgerBtn" onclick="toggleMenu()" aria-label="Открыть меню" aria-expanded="false" aria-controls="navLinks">
+            <button class="burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false" aria-controls="navLinks">
                 <i class="fas fa-bars" id="burgerIcon" aria-hidden="true"></i>
             </button>
         </div>
@@ -778,7 +816,7 @@
                         <li><i class="fas fa-check" aria-hidden="true"></i> Удаление вирусов и восстановление данных</li>
                         <li><i class="fas fa-check" aria-hidden="true"></i> Настройка Wi-Fi и локальной сети</li>
                     </ul>
-                    <a href="#contact" class="btn-outline" style="display:flex;width:100%;">Вызвать мастера</a>
+                    <a href="#contact" class="btn-outline btn-block">Вызвать мастера</a>
                 </div>
 
                 <div class="service-card">
@@ -795,7 +833,7 @@
                         <li><i class="fas fa-check" aria-hidden="true"></i> SEO-оптимизация и настройка рекламы</li>
                         <li><i class="fas fa-check" aria-hidden="true"></i> Техническая поддержка и обслуживание</li>
                     </ul>
-                    <a href="#contact" class="btn-outline" style="display:flex;width:100%;">Заказать сайт</a>
+                    <a href="#contact" class="btn-outline btn-block">Заказать сайт</a>
                 </div>
             </div>
         </div>
@@ -938,6 +976,7 @@
                 </div>
 
                 <button type="submit" class="submit-btn" id="submitBtn">Отправить заявку 24/7</button>
+                <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
             </form>
         </div>
     </section>
@@ -965,43 +1004,92 @@
     </footer>
 
     <script>
+        // ============================================================
+        // ВАЖНО: зарегистрируйтесь на https://formspree.io/ (бесплатно),
+        // создайте форму и замените YOUR_FORM_ID на свой ID.
+        // ============================================================
+        const FORMSPREE_ID = 'YOUR_FORM_ID';
+
         // ===== Мобильное меню =====
+        const nav = document.getElementById('navLinks');
+        const burgerBtn = document.getElementById('burgerBtn');
+        const burgerIcon = document.getElementById('burgerIcon');
+
         function toggleMenu() {
-            const nav = document.getElementById('navLinks');
-            const btn = document.getElementById('burgerBtn');
-            const icon = document.getElementById('burgerIcon');
             const isOpen = nav.classList.toggle('active');
-            btn.setAttribute('aria-expanded', isOpen);
-            icon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+            burgerBtn.setAttribute('aria-expanded', isOpen);
+            burgerIcon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+            burgerBtn.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
         }
 
         function closeMenu() {
-            const nav = document.getElementById('navLinks');
-            const btn = document.getElementById('burgerBtn');
-            const icon = document.getElementById('burgerIcon');
             nav.classList.remove('active');
-            btn.setAttribute('aria-expanded', 'false');
-            icon.className = 'fas fa-bars';
+            burgerBtn.setAttribute('aria-expanded', 'false');
+            burgerIcon.className = 'fas fa-bars';
+            burgerBtn.setAttribute('aria-label', 'Открыть меню');
         }
 
-        // ===== Форма =====
-        // ВАЖНО: зарегистрируйтесь на https://formspree.io/ (бесплатно),
-        // создайте форму и замените YOUR_FORM_ID на свой ID.
-        const FORMSPREE_ID = 'YOUR_FORM_ID';
+        burgerBtn.addEventListener('click', toggleMenu);
 
-        document.getElementById('orderForm').addEventListener('submit', async function(e) {
+        // Делегирование: закрываем меню при клике по любой ссылке навигации
+        nav.addEventListener('click', function (e) {
+            if (e.target.tagName === 'A') closeMenu();
+        });
+
+        // Закрытие меню при клике вне его (на мобильных)
+        document.addEventListener('click', function (e) {
+            if (nav.classList.contains('active') && !nav.contains(e.target) && !burgerBtn.contains(e.target)) {
+                closeMenu();
+            }
+        });
+
+        // Закрытие меню по Escape
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && nav.classList.contains('active')) closeMenu();
+        });
+
+        // ===== Валидация формы =====
+        const orderForm = document.getElementById('orderForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formStatus = document.getElementById('formStatus');
+
+        const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const phoneRe = /^\+?[\d\s()-]{10,}$/;
+
+        function showStatus(message, type) {
+            formStatus.textContent = message;
+            formStatus.className = 'form-status is-visible ' + (type === 'success' ? 'is-success' : 'is-error');
+        }
+
+        function hideStatus() {
+            formStatus.className = 'form-status';
+            formStatus.textContent = '';
+        }
+
+        orderForm.addEventListener('submit', async function (e) {
             e.preventDefault();
+            hideStatus();
 
             const name = document.getElementById('name').value.trim();
             const phone = document.getElementById('phone').value.trim();
             const email = document.getElementById('email').value.trim();
 
-            if (!name || !phone || !email) {
-                alert('Пожалуйста, заполните обязательные поля: имя, телефон и email.');
+            if (!name) {
+                showStatus('Пожалуйста, укажите ваше имя.', 'error');
+                document.getElementById('name').focus();
+                return;
+            }
+            if (!phoneRe.test(phone)) {
+                showStatus('Пожалуйста, введите корректный номер телефона.', 'error');
+                document.getElementById('phone').focus();
+                return;
+            }
+            if (!emailRe.test(email)) {
+                showStatus('Пожалуйста, введите корректный email.', 'error');
+                document.getElementById('email').focus();
                 return;
             }
 
-            const submitBtn = document.getElementById('submitBtn');
             submitBtn.disabled = true;
             submitBtn.textContent = 'Отправка...';
 
@@ -1015,25 +1103,16 @@
                 });
 
                 if (response.ok) {
-                    alert(`Спасибо, ${name}! Ваша заявка принята. Мы свяжемся с вами в ближайшее время.`);
+                    showStatus(`Спасибо, ${name}! Ваша заявка принята. Мы свяжемся с вами в ближайшее время.`, 'success');
                     this.reset();
                 } else {
-                    alert('Не удалось отправить заявку. Пожалуйста, позвоните нам: +7 (999) 123-45-67');
+                    showStatus('Не удалось отправить заявку. Пожалуйста, позвоните нам: +7 (999) 123-45-67', 'error');
                 }
             } catch (err) {
-                alert('Ошибка сети. Пожалуйста, позвоните нам: +7 (999) 123-45-67');
+                showStatus('Ошибка сети. Пожалуйста, позвоните нам: +7 (999) 123-45-67', 'error');
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Отправить заявку 24/7';
-            }
-        });
-
-        // Закрытие меню при клике вне его (на мобильных)
-        document.addEventListener('click', function(e) {
-            const nav = document.getElementById('navLinks');
-            const btn = document.getElementById('burgerBtn');
-            if (nav.classList.contains('active') && !nav.contains(e.target) && !btn.contains(e.target)) {
-                closeMenu();
             }
         });
     </script>
