@@ -96,10 +96,34 @@
     color: var(--accent);
   }
 
-  .nav-links{display:flex;gap:22px;list-style:none;}
-  .nav-links a{text-decoration:none;color:var(--text);font-weight:500;font-size:.95rem;transition:color .2s;}
+  .nav-links{display:flex;gap:22px;list-style:none; align-items: center;}
+  .nav-links a{text-decoration:none;color:var(--text);font-weight:500;font-size:.95rem;transition:color .2s; cursor: pointer;}
   .nav-links a:hover{color:var(--accent);}
+  
+  /* Стили для кнопки О нас */
+  .nav-links button {
+    background: none;
+    border: none;
+    color: var(--text);
+    font-weight: 500;
+    font-size: .95rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: color .2s;
+    padding: 0;
+  }
+  .nav-links button:hover { color: var(--accent); }
+
   .phone-head{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--primary-dark);font-weight:700;font-size:1rem;white-space:nowrap;}
+  
+  /* Иконка телефона в шапке */
+  .phone-head svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--primary-dark);
+    flex-shrink: 0;
+  }
+
   .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px;}
   .burger span{width:24px;height:2px;background:var(--primary);border-radius:2px;}
 
@@ -131,6 +155,14 @@
   }
   .btn-primary{background:var(--primary);color:#fff;box-shadow:0 6px 16px rgba(43,122,120,.3);}
   .btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px);box-shadow:0 10px 22px rgba(43,122,120,.35);}
+  
+  /* Иконка телефона в главной кнопке */
+  .btn-primary svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+  }
+
   .btn-outline{background:#fff;color:var(--primary-dark);border:2px solid var(--accent);}
   .btn-outline:hover{background:var(--accent);color:#fff;transform:translateY(-2px);}
 
@@ -163,6 +195,15 @@
     word-break:break-word;
   }
   .contact-info a:hover{background:var(--bg-alt);}
+
+  /* Иконки телефона и почты в контактах */
+  .contact-info svg {
+    width: 22px;
+    height: 22px;
+    fill: var(--primary-dark);
+    flex-shrink: 0;
+  }
+
   .messengers{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
   .mess{
     display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:50px;
@@ -176,8 +217,15 @@
 
   /* Footer */
   footer{background:var(--primary-dark);color:#d5ebe9;padding:30px 0;text-align:center;font-size:.9rem;}
-  footer a{color:#b6e4e0;text-decoration:none;}
+  footer a{color:#b6e4e0;text-decoration:none; display: inline-flex; align-items: center; gap: 5px; vertical-align: middle;}
   footer a:hover{text-decoration:underline;}
+
+  /* Иконка телефона в подвале */
+  footer svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+  }
 
   /* =========================================
      Плавающие кнопки мессенджеров (справа)
@@ -222,6 +270,83 @@
   .float-tg { background-color: #229ED9; }
   .float-max { background-color: #5b4bdb; }
 
+  /* =========================================
+     Модальное окно "О нас"
+     ========================================= */
+  .modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(29, 58, 56, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; 
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    padding: 20px;
+  }
+
+  .modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; 
+  }
+
+  .modal-box {
+    background: #fff;
+    border-radius: 24px;
+    padding: 40px;
+    max-width: 650px;
+    width: 100%;
+    box-shadow: 0 10px 40px rgba(0,0,0,.2);
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+  }
+
+  .modal-overlay.active .modal-box {
+    transform: translateY(0);
+  }
+
+  .modal-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--primary-dark);
+  }
+
+  .modal-box p {
+    color: #3f6360;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 0;
+    text-align: justify;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--bg-alt);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-dark);
+    font-size: 1.2rem;
+    transition: background 0.2s;
+  }
+
+  .modal-close:hover {
+    background: #cce5e3;
+  }
+
   /* На мобильных делаем кнопки чуть меньше */
   @media (max-width: 820px) {
     .nav-links{
@@ -230,6 +355,16 @@
       display:none;border-top:1px solid #e3f4f1;
     }
     .nav-links.open{display:flex;}
+    .nav-links button {
+      text-align: left;
+      width: 100%;
+      font-size: 1rem;
+    }
+    .nav-links a { 
+      display: block; 
+      width: 100%; 
+      font-size: 1rem;
+    }
     .burger{display:flex;}
     .phone-head{font-size:.9rem;}
     section{padding:44px 0;}
@@ -250,6 +385,14 @@
     
     .logo { font-size: 1.1rem; gap: 8px; }
     .logo svg { width: 32px; height: 32px; border-radius: 5px; }
+    
+    .modal-box {
+      padding: 30px 20px;
+    }
+    .modal-box p {
+      font-size: 0.95rem;
+      text-align: left;
+    }
   }
   @media (max-width:400px){
     .phone-head span{display:none;}
@@ -257,6 +400,15 @@
 </style>
 </head>
 <body>
+
+<!-- Модальное окно "О нас" -->
+<div class="modal-overlay" id="aboutModal">
+  <div class="modal-box">
+    <button class="modal-close" aria-label="Закрыть окно">&times;</button>
+    <h2>О нас</h2>
+    <p>Наша команда состоит из 10 опытных специалистов, каждый из которых является настоящим профессионалом в своей сфере. Мы специализируемся на ремонте компьютеров и создании сайтов, обеспечивая высочайшее качество услуг. За время работы мы успешно выполнили более 1000 заказов по всему миру, помогая клиентам решать самые разные задачи. Мы гордимся тем, что к нам обращаются как частные лица, так и крупные компании, доверяя нам свою технику и digital-проекты. Наш подход основан на индивидуальном внимании к каждому клиенту и глубоком понимании технических нюансов. Мы постоянно развиваемся и следим за современными технологиями, чтобы предлагать лучшие решения. Выбирая нас, вы получаете надежного партнера, нацеленного на долгосрочное и плодотворное сотрудничество.</p>
+  </div>
+</div>
 
 <!-- Плавающие кнопки справа -->
 <div class="floating-messengers">
@@ -273,9 +425,7 @@
 
 <header>
   <div class="container nav">
-    <!-- Логотип и название -->
     <a href="#" class="logo">
-      <!-- Векторная иконка с кодом -->
       <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
         <rect width="100" height="100" fill="var(--accent)" />
         <g stroke="var(--primary-dark)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none">
@@ -289,11 +439,18 @@
     
     <nav>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#services">Услуги</a></li>
-        <li><a href="#contact">Контакты</a></li>
+        <li><a href="#services" class="scroll-link">Услуги</a></li>
+        <li><button id="openAboutBtn">О нас</button></li>
+        <li><a href="#contact" class="scroll-link">Контакты</a></li>
       </ul>
     </nav>
-    <a href="tel:+79272497922" class="phone-head">📞 <span>+7 (927) 249-79-22</span></a>
+    <!-- Иконка телефона в шапке -->
+    <a href="tel:+79272497922" class="phone-head">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>+7 (927) 249-79-22</span>
+    </a>
     <button class="burger" id="burger" aria-label="Меню">
       <span></span><span></span><span></span>
     </button>
@@ -306,8 +463,14 @@
     <h1>Ремонт компьютеров и создание сайтов в Казани</h1>
     <p>Быстрая и качественная компьютерная помощь, ремонт ноутбуков и ПК, разработка сайтов под ключ. Работаем с гарантией и по доступным ценам.</p>
     <div class="hero-buttons">
-      <a href="tel:+79272497922" class="btn btn-primary">📞 Позвонить</a>
-      <a href="#contact" class="btn btn-outline">Связаться</a>
+      <!-- Кнопка с иконкой телефона -->
+      <a href="tel:+79272497922" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Позвонить
+      </a>
+      <a href="#contact" class="btn btn-outline scroll-link">Связаться</a>
     </div>
   </div>
 </section>
@@ -351,8 +514,21 @@
       <h2>Свяжитесь с нами</h2>
       <p>Позвоните, напишите в мессенджер или на почту — ответим быстро!</p>
       <div class="contact-info">
-        <a href="tel:+79272497922">📞 +7 (927) 249-79-22</a>
-        <a href="mailto:ruslanke@yandex.ru">✉️ ruslanke@yandex.ru</a>
+        <!-- Иконка телефона в контактах -->
+        <a href="tel:+79272497922">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          +7 (927) 249-79-22
+        </a>
+        <!-- Иконка почты -->
+        <a href="mailto:ruslanke@yandex.ru">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="22,6 12,13 2,6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          ruslanke@yandex.ru
+        </a>
       </div>
       <div class="messengers">
         <a href="https://wa.me/79272497922" class="mess whatsapp" target="_blank" rel="noopener">WhatsApp</a>
@@ -367,7 +543,13 @@
   <div class="container">
     <p>© <span id="year"></span> RUSLANKE.RU — Ремонт компьютеров и создание сайтов в Казани</p>
     <p style="margin-top:8px;">
-      <a href="tel:+79272497922">+7 (927) 249-79-22</a> ·
+      <!-- Иконка телефона в подвале -->
+      <a href="tel:+79272497922">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        +7 (927) 249-79-22
+      </a> ·
       <a href="mailto:ruslanke@yandex.ru">ruslanke@yandex.ru</a>
     </p>
   </div>
@@ -375,12 +557,66 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+  
+  // Мобильное меню
   const burger = document.getElementById('burger');
   const navLinks = document.getElementById('navLinks');
   burger.addEventListener('click', () => navLinks.classList.toggle('open'));
-  navLinks.querySelectorAll('a').forEach(a =>
-    a.addEventListener('click', () => navLinks.classList.remove('open'))
-  );
+
+  // ==========================================
+  // 1. ПЛАВНАЯ ПРОКРУТКА
+  // ==========================================
+  const scrollLinks = document.querySelectorAll('.scroll-link');
+  
+  scrollLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault(); 
+      
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      
+      if (targetElement) {
+        navLinks.classList.remove('open');
+        const headerHeight = document.querySelector('header').offsetHeight;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+  
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // ==========================================
+  // 2. ЛОГИКА ОКНА "О НАС"
+  // ==========================================
+  const aboutModal = document.getElementById('aboutModal');
+  const openAboutBtn = document.getElementById('openAboutBtn');
+  const closeAboutBtn = document.querySelector('.modal-close');
+
+  openAboutBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    aboutModal.classList.add('active');
+    navLinks.classList.remove('open'); 
+  });
+
+  closeAboutBtn.addEventListener('click', () => {
+    aboutModal.classList.remove('active');
+  });
+
+  aboutModal.addEventListener('click', (e) => {
+    if (e.target === aboutModal) {
+      aboutModal.classList.remove('active');
+    }
+  });
+
+  document.addEventListener('keydown', () => {
+    if (aboutModal.classList.contains('active')) {
+      aboutModal.classList.remove('active');
+    }
+  });
 </script>
 
 </body>
